@@ -47,16 +47,14 @@ User-Triggered Agents}
 \fi
 
 \begin{abstract}
-Studies of AI crawler blocking compare a page fetched with an AI user agent to one fetched with a
-browser's. Such a request also claims an identity it cannot prove. We request the Tranco top
-\R{design.headList} and a random sample of smaller sites with \R{design.ai} AI agents of five
-operators, two neutral controls and spoofed Googlebot and Bingbot, from a residential and a
-datacenter vantage point. Robots.txt rules and server refusals mostly fall on different sites.
-Beyond the rate at which sites refuse a spoofed search engine, only training crawlers are
-refused more often; search and user-triggered agents are not. Where a site refused a spoofed
-user-triggered agent, the real ChatGPT also failed on \pct{val2.ChatGPT.blocked} of checks; the
-real Claude was turned away mostly by its own fetch tool, which honours robots.txt.
-HTTP~402 to AI agents is AI-specific but carries no price, as unverified requests cannot.
+Studies of AI crawler blocking compare an AI user agent's page to a browser's, yet such a
+request claims an identity it cannot prove. We request the Tranco top \R{design.headList} and a
+sample of smaller sites with \R{design.ai} AI agents, neutral controls and spoofed Googlebot and
+Bingbot, from a residential and a datacenter vantage point. Robots.txt rules and server refusals
+mostly fall on different sites. Beyond the rate at which sites refuse a spoofed search engine,
+only training crawlers are refused more often. Where a spoofed user-triggered agent was refused,
+the real ChatGPT failed on \pct{val2.ChatGPT.blocked} of checks; Claude was mostly stopped by its
+own fetch tool. HTTP~402 to AI agents carries no price.
 \end{abstract}
 
 \ccsdesc[500]{Networks~Network measurement}
