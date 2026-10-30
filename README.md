@@ -6,6 +6,7 @@ pre-registration: [PROTOCOL.md](PROTOCOL.md), frozen on 2026-10-28 at commit `48
 and registered on OSF the same day; the repository at that commit is archived as a zip in the
 registration (this public repository starts from a fresh history) (registration https://osf.io/prwng,
 doi:[10.17605/OSF.IO/PRWNG](https://doi.org/10.17605/OSF.IO/PRWNG), project https://osf.io/kzqxf).
+Preprint: doi:[10.5281/zenodo.23808439](https://doi.org/10.5281/zenodo.23808439).
 Node ≥ 22, no dependencies.
 
 ## Pipeline
