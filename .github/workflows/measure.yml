@@ -1,0 +1,79 @@
+# Second vantage point: GitHub-hosted runners (Microsoft Azure datacenter IPs).
+#
+# Driven by git alone, no API token needed: edit config/remote-run.json, commit,
+# push. The merged run comes back as branch data/<run> (split tarball), which
+# `node src/fetch-remote.js <run>` unpacks into runs/<run>/.
+name: measure
+
+on:
+  push:
+    branches: [main]
+    paths: [config/remote-run.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    # Raw page bodies are never released: a public copy of this repo must not measure.
+    if: github.event.repository.private
+    runs-on: ubuntu-24.04
+    outputs:
+      run: ${{ steps.cfg.outputs.run }}
+      args: ${{ steps.cfg.outputs.args }}
+      shards: ${{ steps.cfg.outputs.shards }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: cfg
+        run: |
+          RUN=$(jq -r .run config/remote-run.json)
+          ARGS=$(jq -r '[ "--stratum \(.stratum // "head")", (if .pilot then "--pilot" else empty end), (if .sample then "--sample \(.sample) --seed \(.seed // 1)" else empty end), (if .domains then "--domains \(.domains)" else empty end) ] | join(" ")' config/remote-run.json)
+          SHARDS=$(jq -c '[range(1; (.shards // 4) + 1)]' config/remote-run.json)
+          echo "run=$RUN" >> "$GITHUB_OUTPUT"; echo "args=$ARGS" >> "$GITHUB_OUTPUT"; echo "shards=$SHARDS" >> "$GITHUB_OUTPUT"
+
+  shard:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ${{ fromJson(needs.plan.outputs.shards) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm test
+      - run: node src/measure.js --vantage gh-azure --run ${{ needs.plan.outputs.run }}-s${{ matrix.shard }} --shard ${{ matrix.shard }}/${{ strategy.job-total }} ${{ needs.plan.outputs.args }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shard-${{ matrix.shard }}
+          path: runs/${{ needs.plan.outputs.run }}-s${{ matrix.shard }}
+          retention-days: 7
+
+  merge:
+    needs: [plan, shard]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/download-artifact@v4
+        with:
+          path: shards
+      - run: node src/merge.js runs/${{ needs.plan.outputs.run }} shards/shard-*
+      - name: push data/<run> branch
+        env:
+          RUN: ${{ needs.plan.outputs.run }}
+        run: |
+          mkdir out && tar -czf out/run.tar.gz -C runs "$RUN"
+          (cd out && split -b 90m -d run.tar.gz run.tar.gz.part- && rm run.tar.gz && sha256sum run.tar.gz.part-* > SHA256SUMS)
+          git config user.name "measure-bot"; git config user.email "measure-bot@users.noreply.github.com"
+          git checkout --orphan "data/$RUN"; git rm -rfq .
+          mv out/* . && rmdir out && rm -rf shards runs
+          git add run.tar.gz.part-* SHA256SUMS && git commit -qm "data: $RUN"
+          git push origin "data/$RUN"

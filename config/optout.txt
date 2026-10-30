@@ -1,0 +1,1 @@
+# One domain per line. Skipped in every run and counted in the funnel.

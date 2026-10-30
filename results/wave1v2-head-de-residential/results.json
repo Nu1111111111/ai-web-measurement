@@ -1,0 +1,2490 @@
+{
+ "generated": "2026-10-29T15:43:50.045Z",
+ "label": "wave1v2-head-de-residential",
+ "runs": [
+  {
+   "run": "wave1-head-de-residential",
+   "vantage": [
+    {
+     "vantage": "de-residential",
+     "country": "DE",
+     "org": "AS3320 Deutsche Telekom AG",
+     "commit": "27d1a72ee913acff1b1c6f53645c0158ee099cd0",
+     "dirty": false
+    },
+    {
+     "vantage": "de-residential",
+     "country": "DE",
+     "org": "AS3320 Deutsche Telekom AG",
+     "commit": "099729b048ca0c0b47aafc69a90cc1b4f4276a54",
+     "dirty": false
+    },
+    {
+     "vantage": "de-residential",
+     "country": "DE",
+     "org": "AS3320 Deutsche Telekom AG",
+     "commit": "64095ba2b83a93dc96f113639604b3a1c3801f68",
+     "dirty": false
+    },
+    {
+     "vantage": "de-residential",
+     "country": "DE",
+     "org": "AS3320 Deutsche Telekom AG",
+     "commit": "64095ba2b83a93dc96f113639604b3a1c3801f68",
+     "dirty": false
+    },
+    {
+     "vantage": "de-residential",
+     "country": "DE",
+     "org": "AS3320 Deutsche Telekom AG",
+     "commit": "64095ba2b83a93dc96f113639604b3a1c3801f68",
+     "dirty": false
+    },
+    {
+     "vantage": "de-residential",
+     "country": "DE",
+     "org": "AS3320 Deutsche Telekom AG",
+     "commit": "64095ba2b83a93dc96f113639604b3a1c3801f68",
+     "dirty": false
+    },
+    {
+     "vantage": "de-residential",
+     "country": "DE",
+     "org": "AS3320 Deutsche Telekom AG",
+     "commit": "64095ba2b83a93dc96f113639604b3a1c3801f68",
+     "dirty": false
+    },
+    {
+     "vantage": "de-residential",
+     "country": "DE",
+     "org": "AS3320 Deutsche Telekom AG",
+     "commit": "64095ba2b83a93dc96f113639604b3a1c3801f68",
+     "dirty": false
+    },
+    {
+     "vantage": "de-residential",
+     "country": "DE",
+     "org": "AS3320 Deutsche Telekom AG",
+     "commit": "64095ba2b83a93dc96f113639604b3a1c3801f68",
+     "dirty": false
+    }
+   ],
+   "funnel": {
+    "listed": 10000,
+    "optedOut": 0,
+    "crashed": 0,
+    "robotsUnreachable": 2069,
+    "robotsDisallowStudy": 233,
+    "noWebsite": 139,
+    "probed": 7559,
+    "comparable": 6042
+   },
+   "perArm": {
+    "googlebot": {
+     "role": "reference",
+     "operator": "Google",
+     "n": 6042,
+     "declaredFullBlock": {
+      "k": 8,
+      "n": 6042,
+      "p": 0.0013240648791790798,
+      "lo": 0.000671084061746851,
+      "hi": 0.002610751728397637
+     },
+     "servedBlocked": {
+      "k": 377,
+      "n": 6042,
+      "p": 0.062396557431314136,
+      "lo": 0.05657136099201407,
+      "hi": 0.06877785036847119
+     },
+     "aiSpecificBlock": {
+      "k": 237,
+      "n": 6042,
+      "p": 0.03922542204568024,
+      "lo": 0.03461600250531286,
+      "hi": 0.04442038343553091
+     },
+     "payment": {
+      "k": 1,
+      "n": 6042,
+      "p": 0.00016550810989738498,
+      "lo": 0.000029216842585749256,
+      "hi": 0.0009369776765766647
+     },
+     "contentDiffers": {
+      "k": 358,
+      "n": 6042,
+      "p": 0.05925190334326382,
+      "lo": 0.053574123182316385,
+      "hi": 0.06548977615693181
+     },
+     "aiSpecificDiff": {
+      "k": 116,
+      "n": 6042,
+      "p": 0.019198940748096655,
+      "lo": 0.016031985806872248,
+      "hi": 0.022976886735567092
+     },
+     "cross": {
+      "declaredAndEnforced": 2,
+      "declaredOnly": 6,
+      "enforcedOnly": 375,
+      "neither": 5659
+     },
+     "edges": {
+      "other": 93,
+      "Akamai": 75,
+      "Fastly": 7,
+      "Cloudflare": 51,
+      "AWS": 11
+     },
+     "how": {
+      "http-403": 286,
+      "challenge:cloudflare": 45,
+      "challenge:datadome": 6,
+      "http-404": 5,
+      "challenge:perimeterx": 8,
+      "challenge:imperva": 6,
+      "http-520": 1,
+      "challenge:aws-waf": 5,
+      "http-502": 2,
+      "http-412": 1,
+      "http-418": 1,
+      "http-503": 1,
+      "http-401": 1,
+      "challenge:akamai": 1,
+      "http-455": 1,
+      "http-406": 2,
+      "http-602": 2,
+      "http-405": 1,
+      "http-400": 2
+     }
+    },
+    "bingbot": {
+     "role": "reference",
+     "operator": "Microsoft",
+     "n": 6042,
+     "declaredFullBlock": {
+      "k": 12,
+      "n": 6042,
+      "p": 0.0019860973187686196,
+      "lo": 0.0011365250805418488,
+      "hi": 0.0034685342930209674
+     },
+     "servedBlocked": {
+      "k": 385,
+      "n": 6042,
+      "p": 0.06372062231049322,
+      "lo": 0.05783468700482743,
+      "hi": 0.07016097152249447
+     },
+     "aiSpecificBlock": {
+      "k": 244,
+      "n": 6042,
+      "p": 0.04038397881496193,
+      "lo": 0.03570524188699564,
+      "hi": 0.0456467853248302
+     },
+     "payment": {
+      "k": 1,
+      "n": 6042,
+      "p": 0.00016550810989738498,
+      "lo": 0.000029216842585749256,
+      "hi": 0.0009369776765766647
+     },
+     "contentDiffers": {
+      "k": 351,
+      "n": 6042,
+      "p": 0.05809334657398212,
+      "lo": 0.05247104871019495,
+      "hi": 0.06427720935807117
+     },
+     "aiSpecificDiff": {
+      "k": 106,
+      "n": 6042,
+      "p": 0.017543859649122806,
+      "lo": 0.014526918321183312,
+      "hi": 0.02117389526271021
+     },
+     "cross": {
+      "declaredAndEnforced": 1,
+      "declaredOnly": 11,
+      "enforcedOnly": 384,
+      "neither": 5646
+     },
+     "edges": {
+      "other": 102,
+      "Fastly": 7,
+      "Akamai": 77,
+      "Cloudflare": 49,
+      "AWS": 9
+     },
+     "how": {
+      "http-403": 288,
+      "http-503": 6,
+      "challenge:datadome": 7,
+      "challenge:cloudflare": 38,
+      "http-404": 5,
+      "challenge:imperva": 7,
+      "http-520": 4,
+      "challenge:aws-waf": 4,
+      "http-502": 3,
+      "http-412": 1,
+      "http-401": 1,
+      "http-405": 2,
+      "challenge:akamai": 1,
+      "http-418": 2,
+      "challenge:perimeterx": 6,
+      "http-455": 1,
+      "http-406": 2,
+      "http-602": 2,
+      "http-400": 2,
+      "http-901": 1,
+      "http-500": 2
+     }
+    },
+    "gptbot": {
+     "role": "training",
+     "operator": "OpenAI",
+     "n": 6042,
+     "declaredFullBlock": {
+      "k": 641,
+      "n": 6042,
+      "p": 0.10609069844422377,
+      "lo": 0.09857438773131312,
+      "hi": 0.11410758013478178
+     },
+     "servedBlocked": {
+      "k": 739,
+      "n": 6042,
+      "p": 0.1223104932141675,
+      "lo": 0.11428809040534378,
+      "hi": 0.13081285525450015
+     },
+     "aiSpecificBlock": {
+      "k": 583,
+      "n": 6042,
+      "p": 0.09649122807017543,
+      "lo": 0.08930051017979822,
+      "hi": 0.1041947157267309
+     },
+     "payment": {
+      "k": 34,
+      "n": 6042,
+      "p": 0.005627275736511089,
+      "lo": 0.0040298356896287515,
+      "hi": 0.00785295339273487
+     },
+     "contentDiffers": {
+      "k": 316,
+      "n": 6042,
+      "p": 0.05230056272757365,
+      "lo": 0.04696594298897911,
+      "hi": 0.05820410872437664
+     },
+     "aiSpecificDiff": {
+      "k": 71,
+      "n": 6042,
+      "p": 0.011751075802714332,
+      "lo": 0.009327258668657475,
+      "hi": 0.01479534856032568
+     },
+     "cross": {
+      "declaredAndEnforced": 219,
+      "declaredOnly": 422,
+      "enforcedOnly": 520,
+      "neither": 4881
+     },
+     "edges": {
+      "Akamai": 78,
+      "other": 137,
+      "AWS": 56,
+      "Cloudflare": 306,
+      "Fastly": 4,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 582,
+      "challenge:cloudflare": 88,
+      "http-406": 7,
+      "challenge:aws-waf": 7,
+      "challenge:datadome": 7,
+      "http-503": 3,
+      "http-471": 1,
+      "http-520": 5,
+      "http-401": 1,
+      "http-502": 4,
+      "http-410": 1,
+      "http-418": 7,
+      "http-456": 1,
+      "http-404": 6,
+      "challenge:perimeterx": 5,
+      "challenge:akamai": 1,
+      "challenge:imperva": 3,
+      "http-509": 1,
+      "http-455": 1,
+      "http-400": 4,
+      "http-500": 2,
+      "http-405": 1,
+      "http-530": 1
+     }
+    },
+    "oai-searchbot": {
+     "role": "search",
+     "operator": "OpenAI",
+     "n": 6042,
+     "declaredFullBlock": {
+      "k": 208,
+      "n": 6042,
+      "p": 0.034425686858656074,
+      "lo": 0.03011627319495061,
+      "hi": 0.039326741766110285
+     },
+     "servedBlocked": {
+      "k": 393,
+      "n": 6042,
+      "p": 0.0650446871896723,
+      "lo": 0.0590987684726661,
+      "hi": 0.07154333722149246
+     },
+     "aiSpecificBlock": {
+      "k": 239,
+      "n": 6042,
+      "p": 0.03955643826547501,
+      "lo": 0.03492709857514043,
+      "hi": 0.0447708991574125
+     },
+     "payment": {
+      "k": 38,
+      "n": 6042,
+      "p": 0.006289308176100629,
+      "lo": 0.004585723916448372,
+      "hi": 0.008620288749333576
+     },
+     "contentDiffers": {
+      "k": 164,
+      "n": 6042,
+      "p": 0.027143330023171135,
+      "lo": 0.023336625133810945,
+      "hi": 0.031550930409648334
+     },
+     "aiSpecificDiff": {
+      "k": 65,
+      "n": 6042,
+      "p": 0.010758027143330023,
+      "lo": 0.00844998836438705,
+      "hi": 0.013687783489468612
+     },
+     "cross": {
+      "declaredAndEnforced": 48,
+      "declaredOnly": 160,
+      "enforcedOnly": 345,
+      "neither": 5489
+     },
+     "edges": {
+      "Akamai": 81,
+      "other": 86,
+      "AWS": 24,
+      "Fastly": 3,
+      "Cloudflare": 43,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 299,
+      "challenge:cloudflare": 37,
+      "http-406": 3,
+      "challenge:aws-waf": 11,
+      "challenge:datadome": 3,
+      "http-404": 6,
+      "challenge:perimeterx": 6,
+      "http-503": 2,
+      "http-401": 2,
+      "challenge:generic": 1,
+      "http-451": 2,
+      "http-410": 1,
+      "http-418": 6,
+      "http-456": 1,
+      "challenge:imperva": 4,
+      "challenge:akamai": 1,
+      "http-455": 1,
+      "http-502": 2,
+      "http-405": 1,
+      "http-530": 1,
+      "http-523": 1,
+      "http-520": 2
+     }
+    },
+    "chatgpt-user": {
+     "role": "user",
+     "operator": "OpenAI",
+     "n": 6042,
+     "declaredFullBlock": {
+      "k": 287,
+      "n": 6042,
+      "p": 0.04750082754054949,
+      "lo": 0.04241893597630569,
+      "hi": 0.05315774475726719
+     },
+     "servedBlocked": {
+      "k": 413,
+      "n": 6042,
+      "p": 0.06835484938761999,
+      "lo": 0.062262139764398566,
+      "hi": 0.07499608384685161
+     },
+     "aiSpecificBlock": {
+      "k": 278,
+      "n": 6042,
+      "p": 0.04601125455147302,
+      "lo": 0.04101075399971243,
+      "hi": 0.05158867367116921
+     },
+     "payment": {
+      "k": 39,
+      "n": 6042,
+      "p": 0.006454816285998014,
+      "lo": 0.00472557200061859,
+      "hi": 0.008811246561017939
+     },
+     "contentDiffers": {
+      "k": 317,
+      "n": 6042,
+      "p": 0.052466070837471034,
+      "lo": 0.047122980274389464,
+      "hi": 0.05837787733482087
+     },
+     "aiSpecificDiff": {
+      "k": 67,
+      "n": 6042,
+      "p": 0.011089043363124794,
+      "lo": 0.008741831272740846,
+      "hi": 0.014057552372823984
+     },
+     "cross": {
+      "declaredAndEnforced": 65,
+      "declaredOnly": 222,
+      "enforcedOnly": 348,
+      "neither": 5407
+     },
+     "edges": {
+      "Akamai": 77,
+      "other": 90,
+      "Fastly": 16,
+      "AWS": 48,
+      "Cloudflare": 45,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 323,
+      "challenge:cloudflare": 35,
+      "http-406": 4,
+      "http-451": 3,
+      "challenge:aws-waf": 7,
+      "challenge:datadome": 3,
+      "http-404": 6,
+      "http-503": 2,
+      "http-401": 1,
+      "http-410": 1,
+      "http-418": 6,
+      "http-456": 1,
+      "challenge:imperva": 3,
+      "challenge:perimeterx": 5,
+      "challenge:akamai": 1,
+      "http-455": 1,
+      "http-999": 1,
+      "http-502": 3,
+      "http-500": 1,
+      "http-405": 1,
+      "http-530": 1,
+      "http-523": 1,
+      "http-520": 2,
+      "http-420": 1
+     }
+    },
+    "claudebot": {
+     "role": "training",
+     "operator": "Anthropic",
+     "n": 6042,
+     "declaredFullBlock": {
+      "k": 564,
+      "n": 6042,
+      "p": 0.09334657398212512,
+      "lo": 0.08626727328492571,
+      "hi": 0.10094264060036635
+     },
+     "servedBlocked": {
+      "k": 783,
+      "n": 6042,
+      "p": 0.12959285004965243,
+      "lo": 0.12135906433517404,
+      "hi": 0.1382973407422715
+     },
+     "aiSpecificBlock": {
+      "k": 616,
+      "n": 6042,
+      "p": 0.10195299569678914,
+      "lo": 0.09457444593470386,
+      "hi": 0.10983737453502648
+     },
+     "payment": {
+      "k": 34,
+      "n": 6042,
+      "p": 0.005627275736511089,
+      "lo": 0.0040298356896287515,
+      "hi": 0.00785295339273487
+     },
+     "contentDiffers": {
+      "k": 315,
+      "n": 6042,
+      "p": 0.052135054617676264,
+      "lo": 0.0468089212770734,
+      "hi": 0.058030324540427766
+     },
+     "aiSpecificDiff": {
+      "k": 59,
+      "n": 6042,
+      "p": 0.009764978483945714,
+      "lo": 0.00757826993956222,
+      "hi": 0.012574666539165953
+     },
+     "cross": {
+      "declaredAndEnforced": 215,
+      "declaredOnly": 349,
+      "enforcedOnly": 568,
+      "neither": 4910
+     },
+     "edges": {
+      "other": 138,
+      "Fastly": 19,
+      "Akamai": 85,
+      "Cloudflare": 326,
+      "AWS": 46,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 603,
+      "challenge:cloudflare": 98,
+      "http-451": 3,
+      "http-406": 7,
+      "challenge:datadome": 7,
+      "challenge:perimeterx": 9,
+      "http-503": 3,
+      "http-471": 1,
+      "http-520": 10,
+      "http-401": 2,
+      "http-502": 5,
+      "challenge:generic": 1,
+      "challenge:aws-waf": 8,
+      "http-410": 1,
+      "http-418": 6,
+      "http-456": 1,
+      "http-404": 5,
+      "challenge:akamai": 1,
+      "challenge:imperva": 3,
+      "http-509": 1,
+      "http-400": 4,
+      "http-500": 2,
+      "http-405": 1,
+      "http-415": 1
+     }
+    },
+    "claude-searchbot": {
+     "role": "search",
+     "operator": "Anthropic",
+     "n": 6042,
+     "declaredFullBlock": {
+      "k": 163,
+      "n": 6042,
+      "p": 0.02697782191327375,
+      "lo": 0.0231833417945774,
+      "hi": 0.031373407853027294
+     },
+     "servedBlocked": {
+      "k": 299,
+      "n": 6042,
+      "p": 0.049486924859318104,
+      "lo": 0.04429875065659495,
+      "hi": 0.0552476008272329
+     },
+     "aiSpecificBlock": {
+      "k": 185,
+      "n": 6042,
+      "p": 0.03061900033101622,
+      "lo": 0.0265642844048132,
+      "hi": 0.0352701949515923
+     },
+     "payment": {
+      "k": 26,
+      "n": 6042,
+      "p": 0.004303210857332009,
+      "lo": 0.0029383956156749493,
+      "hi": 0.006297946299852014
+     },
+     "contentDiffers": {
+      "k": 311,
+      "n": 6042,
+      "p": 0.051473022178086726,
+      "lo": 0.046180991570700866,
+      "hi": 0.057335030663381976
+     },
+     "aiSpecificDiff": {
+      "k": 47,
+      "n": 6042,
+      "p": 0.007778881165177094,
+      "lo": 0.005855122586222155,
+      "hi": 0.010328143142251032
+     },
+     "cross": {
+      "declaredAndEnforced": 38,
+      "declaredOnly": 125,
+      "enforcedOnly": 261,
+      "neither": 5618
+     },
+     "edges": {
+      "other": 58,
+      "Akamai": 85,
+      "Fastly": 5,
+      "AWS": 10,
+      "Cloudflare": 27
+     },
+     "how": {
+      "http-403": 234,
+      "challenge:cloudflare": 23,
+      "challenge:datadome": 7,
+      "http-404": 3,
+      "challenge:imperva": 3,
+      "http-471": 1,
+      "http-401": 1,
+      "http-520": 3,
+      "challenge:aws-waf": 5,
+      "http-410": 1,
+      "http-456": 1,
+      "challenge:perimeterx": 6,
+      "challenge:akamai": 1,
+      "http-418": 5,
+      "http-406": 1,
+      "http-502": 1,
+      "http-405": 1,
+      "http-523": 1,
+      "http-500": 1
+     }
+    },
+    "claude-user": {
+     "role": "user",
+     "operator": "Anthropic",
+     "n": 6042,
+     "declaredFullBlock": {
+      "k": 173,
+      "n": 6042,
+      "p": 0.0286329030122476,
+      "lo": 0.024717928908836014,
+      "hi": 0.0331468796973145
+     },
+     "servedBlocked": {
+      "k": 274,
+      "n": 6042,
+      "p": 0.04534922211188348,
+      "lo": 0.04038537687378908,
+      "hi": 0.050890827213674224
+     },
+     "aiSpecificBlock": {
+      "k": 189,
+      "n": 6042,
+      "p": 0.03128103277060576,
+      "lo": 0.027180831614996237,
+      "hi": 0.0359768713248276
+     },
+     "payment": {
+      "k": 22,
+      "n": 6042,
+      "p": 0.003641178417742469,
+      "lo": 0.002405880520569025,
+      "hi": 0.005507237811539611
+     },
+     "contentDiffers": {
+      "k": 253,
+      "n": 6042,
+      "p": 0.0418735518040384,
+      "lo": 0.037107306448913455,
+      "hi": 0.047221973825603634
+     },
+     "aiSpecificDiff": {
+      "k": 41,
+      "n": 6042,
+      "p": 0.006785832505792784,
+      "lo": 0.0050062289368364215,
+      "hi": 0.009192201416509274
+     },
+     "cross": {
+      "declaredAndEnforced": 43,
+      "declaredOnly": 130,
+      "enforcedOnly": 231,
+      "neither": 5638
+     },
+     "edges": {
+      "other": 54,
+      "Akamai": 81,
+      "Fastly": 5,
+      "AWS": 23,
+      "Cloudflare": 26
+     },
+     "how": {
+      "http-403": 229,
+      "challenge:cloudflare": 14,
+      "challenge:imperva": 5,
+      "http-471": 1,
+      "http-406": 2,
+      "challenge:aws-waf": 5,
+      "http-410": 1,
+      "http-503": 1,
+      "challenge:perimeterx": 5,
+      "challenge:akamai": 1,
+      "http-502": 2,
+      "http-404": 1,
+      "http-405": 1,
+      "http-418": 4,
+      "http-500": 1,
+      "http-520": 1
+     }
+    },
+    "perplexitybot": {
+     "role": "search",
+     "operator": "Perplexity",
+     "n": 6042,
+     "declaredFullBlock": {
+      "k": 341,
+      "n": 6042,
+      "p": 0.05643826547500828,
+      "lo": 0.05089637454691428,
+      "hi": 0.06254382456280602
+     },
+     "servedBlocked": {
+      "k": 429,
+      "n": 6042,
+      "p": 0.07100297914597815,
+      "lo": 0.06479593536592457,
+      "hi": 0.07775518257899894
+     },
+     "aiSpecificBlock": {
+      "k": 277,
+      "n": 6042,
+      "p": 0.04584574644157564,
+      "lo": 0.0408543814639324,
+      "hi": 0.05141424031109466
+     },
+     "payment": {
+      "k": 41,
+      "n": 6042,
+      "p": 0.006785832505792784,
+      "lo": 0.0050062289368364215,
+      "hi": 0.009192201416509274
+     },
+     "contentDiffers": {
+      "k": 318,
+      "n": 6042,
+      "p": 0.05263157894736842,
+      "lo": 0.047280033063953515,
+      "hi": 0.0585516304411114
+     },
+     "aiSpecificDiff": {
+      "k": 66,
+      "n": 6042,
+      "p": 0.010923535253227408,
+      "lo": 0.008595834598697486,
+      "hi": 0.01387274315101276
+     },
+     "cross": {
+      "declaredAndEnforced": 81,
+      "declaredOnly": 260,
+      "enforcedOnly": 348,
+      "neither": 5353
+     },
+     "edges": {
+      "Akamai": 82,
+      "other": 82,
+      "Fastly": 12,
+      "AWS": 29,
+      "Cloudflare": 70,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 334,
+      "challenge:cloudflare": 34,
+      "http-451": 4,
+      "challenge:datadome": 7,
+      "http-404": 5,
+      "challenge:perimeterx": 6,
+      "challenge:imperva": 5,
+      "http-503": 2,
+      "http-406": 4,
+      "http-401": 2,
+      "http-520": 4,
+      "http-502": 2,
+      "challenge:aws-waf": 6,
+      "http-412": 1,
+      "http-418": 6,
+      "challenge:akamai": 1,
+      "http-999": 1,
+      "http-500": 1,
+      "http-405": 1,
+      "http-530": 1,
+      "http-523": 1,
+      "http-400": 1
+     }
+    },
+    "perplexity-user": {
+     "role": "user",
+     "operator": "Perplexity",
+     "n": 6042,
+     "declaredFullBlock": {
+      "k": 181,
+      "n": 6042,
+      "p": 0.02995696789142668,
+      "lo": 0.025948273249499835,
+      "hi": 0.034562982523487336
+     },
+     "servedBlocked": {
+      "k": 320,
+      "n": 6042,
+      "p": 0.052962595167163194,
+      "lo": 0.04759418488082572,
+      "hi": 0.05889909041594836
+     },
+     "aiSpecificBlock": {
+      "k": 211,
+      "n": 6042,
+      "p": 0.03492221118834823,
+      "lo": 0.030580734127271282,
+      "hi": 0.03985469852135336
+     },
+     "payment": {
+      "k": 39,
+      "n": 6042,
+      "p": 0.006454816285998014,
+      "lo": 0.00472557200061859,
+      "hi": 0.008811246561017939
+     },
+     "contentDiffers": {
+      "k": 270,
+      "n": 6042,
+      "p": 0.044687189672293945,
+      "lo": 0.03976030480030084,
+      "hi": 0.05019267570374414
+     },
+     "aiSpecificDiff": {
+      "k": 68,
+      "n": 6042,
+      "p": 0.011254551473022179,
+      "lo": 0.008887975114930327,
+      "hi": 0.014242214426489083
+     },
+     "cross": {
+      "declaredAndEnforced": 51,
+      "declaredOnly": 130,
+      "enforcedOnly": 269,
+      "neither": 5592
+     },
+     "edges": {
+      "Akamai": 88,
+      "other": 52,
+      "Fastly": 8,
+      "AWS": 22,
+      "Cloudflare": 39,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 261,
+      "challenge:cloudflare": 18,
+      "http-451": 1,
+      "http-406": 6,
+      "challenge:datadome": 9,
+      "http-404": 4,
+      "challenge:perimeterx": 7,
+      "http-503": 2,
+      "challenge:aws-waf": 3,
+      "http-418": 5,
+      "challenge:akamai": 1,
+      "http-999": 1,
+      "challenge:imperva": 1,
+      "http-502": 1
+     }
+    },
+    "meta-externalagent": {
+     "role": "training",
+     "operator": "Meta",
+     "n": 6042,
+     "declaredFullBlock": {
+      "k": 487,
+      "n": 6042,
+      "p": 0.08060244952002649,
+      "lo": 0.07400183980251036,
+      "hi": 0.08773602010197891
+     },
+     "servedBlocked": {
+      "k": 505,
+      "n": 6042,
+      "p": 0.08358159549817941,
+      "lo": 0.076864918745324,
+      "hi": 0.09082744728454774
+     },
+     "aiSpecificBlock": {
+      "k": 343,
+      "n": 6042,
+      "p": 0.056769281694803046,
+      "lo": 0.05121119928153891,
+      "hi": 0.06289061161989055
+     },
+     "payment": {
+      "k": 36,
+      "n": 6042,
+      "p": 0.005958291956305859,
+      "lo": 0.00430705098426718,
+      "hi": 0.008237349889805604
+     },
+     "contentDiffers": {
+      "k": 305,
+      "n": 6042,
+      "p": 0.05047997351870242,
+      "lo": 0.045239576355208706,
+      "hi": 0.056291610503746654
+     },
+     "aiSpecificDiff": {
+      "k": 61,
+      "n": 6042,
+      "p": 0.010095994703740483,
+      "lo": 0.00786817774793541,
+      "hi": 0.012946370522501924
+     },
+     "cross": {
+      "declaredAndEnforced": 87,
+      "declaredOnly": 400,
+      "enforcedOnly": 418,
+      "neither": 5137
+     },
+     "edges": {
+      "other": 123,
+      "Fastly": 9,
+      "Akamai": 82,
+      "Cloudflare": 80,
+      "AWS": 47,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 387,
+      "challenge:cloudflare": 51,
+      "http-451": 1,
+      "http-406": 10,
+      "challenge:datadome": 6,
+      "http-404": 9,
+      "challenge:perimeterx": 7,
+      "challenge:imperva": 5,
+      "http-503": 2,
+      "http-502": 4,
+      "http-520": 5,
+      "challenge:aws-waf": 9,
+      "http-521": 1,
+      "http-412": 1,
+      "http-401": 1,
+      "http-405": 2,
+      "challenge:akamai": 1,
+      "http-418": 1,
+      "http-523": 1,
+      "http-420": 1
+     }
+    },
+    "ccbot": {
+     "role": "training",
+     "operator": "Common Crawl",
+     "n": 6042,
+     "declaredFullBlock": {
+      "k": 668,
+      "n": 6042,
+      "p": 0.11055941741145316,
+      "lo": 0.10289846128791891,
+      "hi": 0.11871526576624969
+     },
+     "servedBlocked": {
+      "k": 687,
+      "n": 6042,
+      "p": 0.11370407149950347,
+      "lo": 0.10594378267270595,
+      "hi": 0.12195525640269972
+     },
+     "aiSpecificBlock": {
+      "k": 512,
+      "n": 6042,
+      "p": 0.08474015226746111,
+      "lo": 0.0779790560872878,
+      "hi": 0.09202895121356601
+     },
+     "payment": {
+      "k": 49,
+      "n": 6042,
+      "p": 0.008109897384971863,
+      "lo": 0.006140152875448409,
+      "hi": 0.01070472464473394
+     },
+     "contentDiffers": {
+      "k": 276,
+      "n": 6042,
+      "p": 0.04568023833167825,
+      "lo": 0.04069802769964076,
+      "hi": 0.05123978817953171
+     },
+     "aiSpecificDiff": {
+      "k": 31,
+      "n": 6042,
+      "p": 0.005130751406818934,
+      "lo": 0.003617027159881794,
+      "hi": 0.007273344234918079
+     },
+     "cross": {
+      "declaredAndEnforced": 218,
+      "declaredOnly": 450,
+      "enforcedOnly": 469,
+      "neither": 4905
+     },
+     "edges": {
+      "other": 95,
+      "Fastly": 12,
+      "Akamai": 88,
+      "Cloudflare": 289,
+      "AWS": 26,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 549,
+      "http-451": 3,
+      "challenge:cloudflare": 72,
+      "http-406": 8,
+      "challenge:datadome": 5,
+      "http-404": 9,
+      "challenge:perimeterx": 6,
+      "challenge:imperva": 4,
+      "http-503": 2,
+      "http-471": 1,
+      "http-500": 5,
+      "http-401": 2,
+      "http-502": 3,
+      "challenge:aws-waf": 6,
+      "http-520": 2,
+      "http-521": 1,
+      "http-412": 1,
+      "challenge:generic": 1,
+      "http-410": 1,
+      "challenge:akamai": 1,
+      "http-400": 1,
+      "http-405": 1,
+      "http-418": 1,
+      "http-530": 1,
+      "http-415": 1
+     }
+    }
+   },
+   "anyAi": {
+    "declaredFullBlock": {
+     "k": 830,
+     "n": 6042,
+     "p": 0.13737173121482954,
+     "lo": 0.12892186978675105,
+     "hi": 0.14628241239585987
+    },
+    "servedBlocked": {
+     "k": 1188,
+     "n": 6042,
+     "p": 0.19662363455809334,
+     "lo": 0.18679617135045348,
+     "hi": 0.2068366215480978
+    },
+    "aiSpecificBlock": {
+     "k": 908,
+     "n": 6042,
+     "p": 0.15028136378682555,
+     "lo": 0.1414932148782932,
+     "hi": 0.15951392718097512
+    },
+    "payment": {
+     "k": 66,
+     "n": 6042,
+     "p": 0.010923535253227408,
+     "lo": 0.008595834598697486,
+     "hi": 0.01387274315101276
+    },
+    "aiSpecificDiff": {
+     "k": 128,
+     "n": 6042,
+     "p": 0.021185038066865277,
+     "lo": 0.017846728013191676,
+     "hi": 0.025131815279502652
+    },
+    "enforcedDespiteAllowed": {
+     "k": 731,
+     "n": 6042,
+     "p": 0.12098642833498842,
+     "lo": 0.11300345713255917,
+     "hi": 0.12945104136044813
+    }
+   },
+   "rq2": {
+    "anyAiDiff": {
+     "k": 128,
+     "n": 6042,
+     "p": 0.021185038066865277,
+     "lo": 0.017846728013191676,
+     "hi": 0.025131815279502652
+    },
+    "anySearchEngineDiff": {
+     "k": 125,
+     "n": 6042,
+     "p": 0.02068851373717312,
+     "lo": 0.0173922239020986,
+     "hi": 0.024593901703031978
+    },
+    "aiOnlyDiff": {
+     "k": 59,
+     "n": 6042,
+     "p": 0.009764978483945714,
+     "lo": 0.00757826993956222,
+     "hi": 0.012574666539165953
+    }
+   },
+   "roleSplit": {
+    "OpenAI": {
+     "trainingBlocked": 583,
+     "searchBlocked": 239,
+     "userBlocked": 278,
+     "n": 6042
+    },
+    "Anthropic": {
+     "trainingBlocked": 616,
+     "searchBlocked": 185,
+     "userBlocked": 189,
+     "n": 6042
+    },
+    "Perplexity": {
+     "trainingBlocked": 0,
+     "searchBlocked": 277,
+     "userBlocked": 211,
+     "n": 6042
+    }
+   }
+  },
+  {
+   "run": "wave2-head-de-residential",
+   "vantage": [
+    {
+     "vantage": "de-residential",
+     "country": "DE",
+     "org": "AS3320 Deutsche Telekom AG",
+     "commit": "31dc311fdf4db3681b7cc5d272838a343f898634",
+     "dirty": false
+    },
+    {
+     "vantage": "de-residential",
+     "country": "DE",
+     "org": "AS3320 Deutsche Telekom AG",
+     "commit": "31dc311fdf4db3681b7cc5d272838a343f898634",
+     "dirty": false
+    },
+    {
+     "vantage": "de-residential",
+     "country": "DE",
+     "org": "AS3320 Deutsche Telekom AG",
+     "commit": "31dc311fdf4db3681b7cc5d272838a343f898634",
+     "dirty": false
+    }
+   ],
+   "funnel": {
+    "listed": 1876,
+    "optedOut": 0,
+    "crashed": 0,
+    "robotsUnreachable": 15,
+    "robotsDisallowStudy": 0,
+    "noWebsite": 15,
+    "probed": 1846,
+    "comparable": 1775
+   },
+   "perArm": {
+    "googlebot": {
+     "role": "reference",
+     "operator": "Google",
+     "n": 1775,
+     "declaredFullBlock": {
+      "k": 3,
+      "n": 1775,
+      "p": 0.0016901408450704226,
+      "lo": 0.000574963202993099,
+      "hi": 0.004957547202675792
+     },
+     "servedBlocked": {
+      "k": 372,
+      "n": 1775,
+      "p": 0.2095774647887324,
+      "lo": 0.1912803304998244,
+      "hi": 0.22912895057888935
+     },
+     "aiSpecificBlock": {
+      "k": 233,
+      "n": 1775,
+      "p": 0.13126760563380283,
+      "lo": 0.11635087431175574,
+      "hi": 0.14777691320719313
+     },
+     "payment": {
+      "k": 1,
+      "n": 1775,
+      "p": 0.0005633802816901409,
+      "lo": 0.0000994573758693994,
+      "hi": 0.0031843984462057518
+     },
+     "contentDiffers": {
+      "k": 343,
+      "n": 1775,
+      "p": 0.19323943661971832,
+      "lo": 0.17554147715849658,
+      "hi": 0.21226231245810798
+     },
+     "aiSpecificDiff": {
+      "k": 111,
+      "n": 1775,
+      "p": 0.06253521126760564,
+      "lo": 0.052188609354457675,
+      "hi": 0.07477124856527315
+     },
+     "cross": {
+      "declaredAndEnforced": 2,
+      "declaredOnly": 1,
+      "enforcedOnly": 370,
+      "neither": 1402
+     },
+     "edges": {
+      "other": 93,
+      "Akamai": 72,
+      "Fastly": 7,
+      "Cloudflare": 52,
+      "AWS": 9
+     },
+     "how": {
+      "http-403": 288,
+      "challenge:cloudflare": 45,
+      "challenge:datadome": 2,
+      "http-404": 5,
+      "challenge:perimeterx": 5,
+      "challenge:imperva": 6,
+      "http-520": 1,
+      "challenge:aws-waf": 5,
+      "http-502": 2,
+      "http-412": 1,
+      "http-418": 1,
+      "http-503": 1,
+      "http-401": 1,
+      "challenge:akamai": 1,
+      "http-455": 1,
+      "http-406": 2,
+      "http-602": 2,
+      "http-405": 1,
+      "http-400": 2
+     }
+    },
+    "bingbot": {
+     "role": "reference",
+     "operator": "Microsoft",
+     "n": 1775,
+     "declaredFullBlock": {
+      "k": 1,
+      "n": 1775,
+      "p": 0.0005633802816901409,
+      "lo": 0.0000994573758693994,
+      "hi": 0.0031843984462057518
+     },
+     "servedBlocked": {
+      "k": 372,
+      "n": 1775,
+      "p": 0.2095774647887324,
+      "lo": 0.1912803304998244,
+      "hi": 0.22912895057888935
+     },
+     "aiSpecificBlock": {
+      "k": 239,
+      "n": 1775,
+      "p": 0.13464788732394367,
+      "lo": 0.11955461858958026,
+      "hi": 0.15131913268014985
+     },
+     "payment": {
+      "k": 1,
+      "n": 1775,
+      "p": 0.0005633802816901409,
+      "lo": 0.0000994573758693994,
+      "hi": 0.0031843984462057518
+     },
+     "contentDiffers": {
+      "k": 333,
+      "n": 1775,
+      "p": 0.1876056338028169,
+      "lo": 0.17012569024035248,
+      "hi": 0.20643482645828332
+     },
+     "aiSpecificDiff": {
+      "k": 98,
+      "n": 1775,
+      "p": 0.0552112676056338,
+      "lo": 0.04551487533411261,
+      "hi": 0.06682872779225887
+     },
+     "cross": {
+      "declaredAndEnforced": 1,
+      "declaredOnly": 0,
+      "enforcedOnly": 371,
+      "neither": 1403
+     },
+     "edges": {
+      "other": 101,
+      "Fastly": 7,
+      "Akamai": 75,
+      "Cloudflare": 47,
+      "AWS": 9
+     },
+     "how": {
+      "http-403": 285,
+      "http-503": 7,
+      "challenge:datadome": 2,
+      "challenge:cloudflare": 38,
+      "http-404": 5,
+      "challenge:imperva": 7,
+      "http-520": 3,
+      "challenge:aws-waf": 4,
+      "http-502": 2,
+      "http-412": 1,
+      "http-401": 1,
+      "http-405": 2,
+      "challenge:akamai": 1,
+      "http-418": 2,
+      "http-455": 1,
+      "http-406": 2,
+      "http-602": 2,
+      "challenge:perimeterx": 2,
+      "http-400": 2,
+      "http-901": 1,
+      "http-500": 2
+     }
+    },
+    "gptbot": {
+     "role": "training",
+     "operator": "OpenAI",
+     "n": 1775,
+     "declaredFullBlock": {
+      "k": 368,
+      "n": 1775,
+      "p": 0.20732394366197182,
+      "lo": 0.18910663678808545,
+      "hi": 0.22680533512344078
+     },
+     "servedBlocked": {
+      "k": 713,
+      "n": 1775,
+      "p": 0.40169014084507043,
+      "lo": 0.3791196491328018,
+      "hi": 0.4246852384486444
+     },
+     "aiSpecificBlock": {
+      "k": 565,
+      "n": 1775,
+      "p": 0.3183098591549296,
+      "lo": 0.29705165323524185,
+      "hi": 0.3403527951602677
+     },
+     "payment": {
+      "k": 34,
+      "n": 1775,
+      "p": 0.01915492957746479,
+      "lo": 0.013739528322400942,
+      "hi": 0.026647128128970902
+     },
+     "contentDiffers": {
+      "k": 295,
+      "n": 1775,
+      "p": 0.16619718309859155,
+      "lo": 0.14960394821132322,
+      "hi": 0.18423213139903155
+     },
+     "aiSpecificDiff": {
+      "k": 60,
+      "n": 1775,
+      "p": 0.03380281690140845,
+      "lo": 0.02635120359365755,
+      "hi": 0.04326796244443289
+     },
+     "cross": {
+      "declaredAndEnforced": 225,
+      "declaredOnly": 143,
+      "enforcedOnly": 488,
+      "neither": 919
+     },
+     "edges": {
+      "other": 138,
+      "Akamai": 74,
+      "AWS": 54,
+      "Cloudflare": 293,
+      "Fastly": 4,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-406": 7,
+      "http-403": 566,
+      "challenge:cloudflare": 87,
+      "challenge:datadome": 2,
+      "http-503": 3,
+      "http-471": 1,
+      "http-520": 5,
+      "http-401": 1,
+      "http-502": 4,
+      "challenge:aws-waf": 6,
+      "http-410": 1,
+      "http-418": 7,
+      "http-456": 1,
+      "http-404": 6,
+      "challenge:perimeterx": 3,
+      "challenge:akamai": 1,
+      "http-509": 1,
+      "http-455": 1,
+      "challenge:imperva": 3,
+      "http-400": 4,
+      "http-405": 1,
+      "http-530": 1,
+      "http-500": 1
+     }
+    },
+    "oai-searchbot": {
+     "role": "search",
+     "operator": "OpenAI",
+     "n": 1775,
+     "declaredFullBlock": {
+      "k": 130,
+      "n": 1775,
+      "p": 0.07323943661971831,
+      "lo": 0.06201903432569517,
+      "hi": 0.08630304213817615
+     },
+     "servedBlocked": {
+      "k": 388,
+      "n": 1775,
+      "p": 0.21859154929577465,
+      "lo": 0.1999837226415664,
+      "hi": 0.23841479510589722
+     },
+     "aiSpecificBlock": {
+      "k": 238,
+      "n": 1775,
+      "p": 0.13408450704225353,
+      "lo": 0.1190204279050602,
+      "hi": 0.15072899607287304
+     },
+     "payment": {
+      "k": 38,
+      "n": 1775,
+      "p": 0.02140845070422535,
+      "lo": 0.015636794363918072,
+      "hi": 0.029247171254641248
+     },
+     "contentDiffers": {
+      "k": 155,
+      "n": 1775,
+      "p": 0.08732394366197183,
+      "lo": 0.07506578197274127,
+      "hi": 0.10136447678605177
+     },
+     "aiSpecificDiff": {
+      "k": 61,
+      "n": 1775,
+      "p": 0.03436619718309859,
+      "lo": 0.0268467579155127,
+      "hi": 0.043896735414374624
+     },
+     "cross": {
+      "declaredAndEnforced": 48,
+      "declaredOnly": 82,
+      "enforcedOnly": 340,
+      "neither": 1305
+     },
+     "edges": {
+      "other": 87,
+      "Akamai": 80,
+      "AWS": 24,
+      "Fastly": 3,
+      "Cloudflare": 42,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-406": 3,
+      "http-403": 297,
+      "challenge:cloudflare": 37,
+      "challenge:aws-waf": 11,
+      "http-404": 6,
+      "challenge:perimeterx": 5,
+      "http-401": 2,
+      "challenge:generic": 1,
+      "http-451": 2,
+      "http-410": 1,
+      "challenge:datadome": 1,
+      "http-418": 6,
+      "http-503": 1,
+      "http-456": 1,
+      "challenge:imperva": 4,
+      "challenge:akamai": 1,
+      "http-455": 1,
+      "http-502": 3,
+      "http-405": 1,
+      "http-530": 1,
+      "http-523": 1,
+      "http-520": 2
+     }
+    },
+    "chatgpt-user": {
+     "role": "user",
+     "operator": "OpenAI",
+     "n": 1775,
+     "declaredFullBlock": {
+      "k": 172,
+      "n": 1775,
+      "p": 0.09690140845070423,
+      "lo": 0.08399724579783319,
+      "hi": 0.11154657692150667
+     },
+     "servedBlocked": {
+      "k": 401,
+      "n": 1775,
+      "p": 0.2259154929577465,
+      "lo": 0.20706506944756978,
+      "hi": 0.24594970309325317
+     },
+     "aiSpecificBlock": {
+      "k": 271,
+      "n": 1775,
+      "p": 0.15267605633802817,
+      "lo": 0.13669493420444068,
+      "hi": 0.17015729040278924
+     },
+     "payment": {
+      "k": 39,
+      "n": 1775,
+      "p": 0.021971830985915493,
+      "lo": 0.016114158488488215,
+      "hi": 0.029894134421867974
+     },
+     "contentDiffers": {
+      "k": 306,
+      "n": 1775,
+      "p": 0.1723943661971831,
+      "lo": 0.15553453284500168,
+      "hi": 0.19066914697511866
+     },
+     "aiSpecificDiff": {
+      "k": 60,
+      "n": 1775,
+      "p": 0.03380281690140845,
+      "lo": 0.02635120359365755,
+      "hi": 0.04326796244443289
+     },
+     "cross": {
+      "declaredAndEnforced": 64,
+      "declaredOnly": 108,
+      "enforcedOnly": 337,
+      "neither": 1266
+     },
+     "edges": {
+      "other": 89,
+      "Akamai": 76,
+      "Fastly": 15,
+      "AWS": 46,
+      "Cloudflare": 43,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-406": 4,
+      "http-403": 320,
+      "challenge:cloudflare": 33,
+      "http-451": 3,
+      "http-404": 6,
+      "http-401": 1,
+      "challenge:aws-waf": 6,
+      "http-410": 1,
+      "challenge:datadome": 1,
+      "http-418": 6,
+      "http-503": 1,
+      "http-456": 1,
+      "challenge:imperva": 3,
+      "challenge:perimeterx": 2,
+      "challenge:akamai": 1,
+      "http-455": 1,
+      "http-999": 1,
+      "http-502": 3,
+      "http-500": 1,
+      "http-405": 1,
+      "http-530": 1,
+      "http-523": 1,
+      "http-520": 2,
+      "http-420": 1
+     }
+    },
+    "claudebot": {
+     "role": "training",
+     "operator": "Anthropic",
+     "n": 1775,
+     "declaredFullBlock": {
+      "k": 341,
+      "n": 1775,
+      "p": 0.19211267605633803,
+      "lo": 0.1744578360545148,
+      "hi": 0.211097298978496
+     },
+     "servedBlocked": {
+      "k": 754,
+      "n": 1775,
+      "p": 0.4247887323943662,
+      "lo": 0.4019795918764164,
+      "hi": 0.4479227146687014
+     },
+     "aiSpecificBlock": {
+      "k": 596,
+      "n": 1775,
+      "p": 0.3357746478873239,
+      "lo": 0.31418014012780754,
+      "hi": 0.35807845431340485
+     },
+     "payment": {
+      "k": 34,
+      "n": 1775,
+      "p": 0.01915492957746479,
+      "lo": 0.013739528322400942,
+      "hi": 0.026647128128970902
+     },
+     "contentDiffers": {
+      "k": 299,
+      "n": 1775,
+      "p": 0.1684507042253521,
+      "lo": 0.15175954815452208,
+      "hi": 0.18657384062302015
+     },
+     "aiSpecificDiff": {
+      "k": 54,
+      "n": 1775,
+      "p": 0.030422535211267605,
+      "lo": 0.02339123274774615,
+      "hi": 0.03948196953956309
+     },
+     "cross": {
+      "declaredAndEnforced": 225,
+      "declaredOnly": 116,
+      "enforcedOnly": 529,
+      "neither": 905
+     },
+     "edges": {
+      "other": 140,
+      "Fastly": 18,
+      "Akamai": 84,
+      "Cloudflare": 307,
+      "AWS": 45,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 585,
+      "challenge:cloudflare": 96,
+      "http-451": 3,
+      "http-406": 7,
+      "challenge:datadome": 2,
+      "challenge:perimeterx": 5,
+      "http-503": 3,
+      "http-471": 1,
+      "http-520": 10,
+      "http-401": 2,
+      "http-502": 5,
+      "challenge:generic": 1,
+      "challenge:aws-waf": 8,
+      "http-410": 1,
+      "http-418": 6,
+      "http-456": 1,
+      "http-404": 5,
+      "challenge:akamai": 1,
+      "http-509": 1,
+      "challenge:imperva": 3,
+      "http-400": 4,
+      "http-500": 2,
+      "http-405": 1,
+      "http-415": 1
+     }
+    },
+    "claude-searchbot": {
+     "role": "search",
+     "operator": "Anthropic",
+     "n": 1775,
+     "declaredFullBlock": {
+      "k": 93,
+      "n": 1775,
+      "p": 0.0523943661971831,
+      "lo": 0.04296131001066412,
+      "hi": 0.06376065665672304
+     },
+     "servedBlocked": {
+      "k": 286,
+      "n": 1775,
+      "p": 0.1611267605633803,
+      "lo": 0.14475803898618583,
+      "hi": 0.17895909499799717
+     },
+     "aiSpecificBlock": {
+      "k": 178,
+      "n": 1775,
+      "p": 0.10028169014084506,
+      "lo": 0.08715957342225548,
+      "hi": 0.11513021304786557
+     },
+     "payment": {
+      "k": 26,
+      "n": 1775,
+      "p": 0.014647887323943662,
+      "lo": 0.010015547161413847,
+      "hi": 0.021376490955583038
+     },
+     "contentDiffers": {
+      "k": 298,
+      "n": 1775,
+      "p": 0.16788732394366196,
+      "lo": 0.1512205424550623,
+      "hi": 0.18598851903068306
+     },
+     "aiSpecificDiff": {
+      "k": 43,
+      "n": 1775,
+      "p": 0.024225352112676058,
+      "lo": 0.01803451642053482,
+      "hi": 0.032471085657008854
+     },
+     "cross": {
+      "declaredAndEnforced": 37,
+      "declaredOnly": 56,
+      "enforcedOnly": 249,
+      "neither": 1433
+     },
+     "edges": {
+      "other": 57,
+      "Akamai": 82,
+      "Fastly": 4,
+      "AWS": 10,
+      "Cloudflare": 25
+     },
+     "how": {
+      "http-403": 228,
+      "challenge:cloudflare": 23,
+      "challenge:datadome": 2,
+      "http-404": 3,
+      "challenge:imperva": 3,
+      "http-471": 1,
+      "http-401": 1,
+      "http-520": 3,
+      "challenge:aws-waf": 5,
+      "http-410": 1,
+      "http-456": 1,
+      "http-503": 1,
+      "challenge:perimeterx": 3,
+      "challenge:akamai": 1,
+      "http-418": 5,
+      "http-406": 1,
+      "http-502": 1,
+      "http-405": 1,
+      "http-523": 1,
+      "http-500": 1
+     }
+    },
+    "claude-user": {
+     "role": "user",
+     "operator": "Anthropic",
+     "n": 1775,
+     "declaredFullBlock": {
+      "k": 109,
+      "n": 1775,
+      "p": 0.061408450704225355,
+      "lo": 0.05115886915947865,
+      "hi": 0.07355233417665841
+     },
+     "servedBlocked": {
+      "k": 268,
+      "n": 1775,
+      "p": 0.15098591549295776,
+      "lo": 0.13508440476951586,
+      "hi": 0.16839483796232346
+     },
+     "aiSpecificBlock": {
+      "k": 186,
+      "n": 1775,
+      "p": 0.1047887323943662,
+      "lo": 0.09138353556605455,
+      "hi": 0.11990086923844147
+     },
+     "payment": {
+      "k": 22,
+      "n": 1775,
+      "p": 0.012394366197183098,
+      "lo": 0.008199217626660442,
+      "hi": 0.018695511323148967
+     },
+     "contentDiffers": {
+      "k": 244,
+      "n": 1775,
+      "p": 0.13746478873239437,
+      "lo": 0.12222694495562714,
+      "hi": 0.15426844277308732
+     },
+     "aiSpecificDiff": {
+      "k": 38,
+      "n": 1775,
+      "p": 0.02140845070422535,
+      "lo": 0.015636794363918072,
+      "hi": 0.029247171254641248
+     },
+     "cross": {
+      "declaredAndEnforced": 43,
+      "declaredOnly": 66,
+      "enforcedOnly": 225,
+      "neither": 1441
+     },
+     "edges": {
+      "other": 55,
+      "Akamai": 79,
+      "Fastly": 5,
+      "AWS": 23,
+      "Cloudflare": 24
+     },
+     "how": {
+      "http-403": 226,
+      "challenge:cloudflare": 13,
+      "challenge:imperva": 5,
+      "http-471": 1,
+      "http-406": 2,
+      "challenge:aws-waf": 5,
+      "http-410": 1,
+      "http-503": 1,
+      "challenge:perimeterx": 3,
+      "challenge:akamai": 1,
+      "http-502": 2,
+      "http-404": 1,
+      "http-405": 1,
+      "http-418": 4,
+      "http-500": 1,
+      "http-520": 1
+     }
+    },
+    "perplexitybot": {
+     "role": "search",
+     "operator": "Perplexity",
+     "n": 1775,
+     "declaredFullBlock": {
+      "k": 190,
+      "n": 1775,
+      "p": 0.10704225352112676,
+      "lo": 0.09349860367854718,
+      "hi": 0.12228311029313631
+     },
+     "servedBlocked": {
+      "k": 414,
+      "n": 1775,
+      "p": 0.2332394366197183,
+      "lo": 0.21415490941324236,
+      "hi": 0.2534761179209399
+     },
+     "aiSpecificBlock": {
+      "k": 271,
+      "n": 1775,
+      "p": 0.15267605633802817,
+      "lo": 0.13669493420444068,
+      "hi": 0.17015729040278924
+     },
+     "payment": {
+      "k": 41,
+      "n": 1775,
+      "p": 0.023098591549295774,
+      "lo": 0.017072234004792602,
+      "hi": 0.031184713489157325
+     },
+     "contentDiffers": {
+      "k": 312,
+      "n": 1775,
+      "p": 0.17577464788732394,
+      "lo": 0.15877289399786484,
+      "hi": 0.1941767495730367
+     },
+     "aiSpecificDiff": {
+      "k": 61,
+      "n": 1775,
+      "p": 0.03436619718309859,
+      "lo": 0.0268467579155127,
+      "hi": 0.043896735414374624
+     },
+     "cross": {
+      "declaredAndEnforced": 80,
+      "declaredOnly": 110,
+      "enforcedOnly": 334,
+      "neither": 1251
+     },
+     "edges": {
+      "other": 84,
+      "Akamai": 81,
+      "Fastly": 12,
+      "AWS": 29,
+      "Cloudflare": 63,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 330,
+      "challenge:cloudflare": 32,
+      "http-451": 4,
+      "challenge:datadome": 3,
+      "http-404": 4,
+      "challenge:perimeterx": 4,
+      "challenge:imperva": 5,
+      "http-406": 4,
+      "http-401": 2,
+      "http-520": 3,
+      "http-502": 2,
+      "challenge:aws-waf": 6,
+      "http-412": 1,
+      "http-418": 6,
+      "http-503": 1,
+      "challenge:akamai": 1,
+      "http-999": 1,
+      "http-500": 1,
+      "http-405": 1,
+      "http-530": 1,
+      "http-523": 1,
+      "http-400": 1
+     }
+    },
+    "perplexity-user": {
+     "role": "user",
+     "operator": "Perplexity",
+     "n": 1775,
+     "declaredFullBlock": {
+      "k": 107,
+      "n": 1775,
+      "p": 0.06028169014084507,
+      "lo": 0.050130181289594886,
+      "hi": 0.07233236746294842
+     },
+     "servedBlocked": {
+      "k": 307,
+      "n": 1775,
+      "p": 0.17295774647887324,
+      "lo": 0.15607409094749866,
+      "hi": 0.19125391616441856
+     },
+     "aiSpecificBlock": {
+      "k": 208,
+      "n": 1775,
+      "p": 0.1171830985915493,
+      "lo": 0.10304019003816989,
+      "hi": 0.13297941518585726
+     },
+     "payment": {
+      "k": 39,
+      "n": 1775,
+      "p": 0.021971830985915493,
+      "lo": 0.016114158488488215,
+      "hi": 0.029894134421867974
+     },
+     "contentDiffers": {
+      "k": 259,
+      "n": 1775,
+      "p": 0.14591549295774647,
+      "lo": 0.1302571728387589,
+      "hi": 0.1631031242669086
+     },
+     "aiSpecificDiff": {
+      "k": 60,
+      "n": 1775,
+      "p": 0.03380281690140845,
+      "lo": 0.02635120359365755,
+      "hi": 0.04326796244443289
+     },
+     "cross": {
+      "declaredAndEnforced": 50,
+      "declaredOnly": 57,
+      "enforcedOnly": 257,
+      "neither": 1411
+     },
+     "edges": {
+      "other": 52,
+      "Akamai": 87,
+      "Fastly": 7,
+      "AWS": 22,
+      "Cloudflare": 38,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 258,
+      "challenge:cloudflare": 18,
+      "http-451": 1,
+      "http-406": 6,
+      "challenge:datadome": 3,
+      "http-404": 4,
+      "challenge:perimeterx": 4,
+      "challenge:aws-waf": 3,
+      "http-418": 5,
+      "http-503": 1,
+      "challenge:akamai": 1,
+      "http-999": 1,
+      "challenge:imperva": 1,
+      "http-502": 1
+     }
+    },
+    "meta-externalagent": {
+     "role": "training",
+     "operator": "Meta",
+     "n": 1775,
+     "declaredFullBlock": {
+      "k": 297,
+      "n": 1775,
+      "p": 0.16732394366197184,
+      "lo": 0.15068160704264197,
+      "hi": 0.18540312715130658
+     },
+     "servedBlocked": {
+      "k": 495,
+      "n": 1775,
+      "p": 0.27887323943661974,
+      "lo": 0.2585057310870243,
+      "hi": 0.30019580688270436
+     },
+     "aiSpecificBlock": {
+      "k": 340,
+      "n": 1775,
+      "p": 0.19154929577464788,
+      "lo": 0.17391610548852993,
+      "hi": 0.21051470225268398
+     },
+     "payment": {
+      "k": 36,
+      "n": 1775,
+      "p": 0.02028169014084507,
+      "lo": 0.014685627375359778,
+      "hi": 0.0279496836596058
+     },
+     "contentDiffers": {
+      "k": 295,
+      "n": 1775,
+      "p": 0.16619718309859155,
+      "lo": 0.14960394821132322,
+      "hi": 0.18423213139903155
+     },
+     "aiSpecificDiff": {
+      "k": 51,
+      "n": 1775,
+      "p": 0.02873239436619718,
+      "lo": 0.021920590994680834,
+      "hi": 0.03757962941723779
+     },
+     "cross": {
+      "declaredAndEnforced": 83,
+      "declaredOnly": 214,
+      "enforcedOnly": 412,
+      "neither": 1066
+     },
+     "edges": {
+      "other": 124,
+      "Fastly": 8,
+      "Akamai": 80,
+      "Cloudflare": 80,
+      "AWS": 46,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 384,
+      "challenge:cloudflare": 50,
+      "http-451": 1,
+      "http-406": 10,
+      "challenge:datadome": 3,
+      "http-404": 9,
+      "challenge:perimeterx": 4,
+      "challenge:imperva": 5,
+      "http-502": 4,
+      "http-520": 5,
+      "http-522": 1,
+      "challenge:aws-waf": 9,
+      "http-521": 1,
+      "http-412": 1,
+      "http-503": 1,
+      "http-401": 1,
+      "http-405": 2,
+      "challenge:akamai": 1,
+      "http-418": 1,
+      "http-523": 1,
+      "http-420": 1
+     }
+    },
+    "ccbot": {
+     "role": "training",
+     "operator": "Common Crawl",
+     "n": 1775,
+     "declaredFullBlock": {
+      "k": 390,
+      "n": 1775,
+      "p": 0.21971830985915494,
+      "lo": 0.20107259590985668,
+      "hi": 0.23957457642120072
+     },
+     "servedBlocked": {
+      "k": 669,
+      "n": 1775,
+      "p": 0.37690140845070425,
+      "lo": 0.3546455006216209,
+      "hi": 0.39968898612076303
+     },
+     "aiSpecificBlock": {
+      "k": 500,
+      "n": 1775,
+      "p": 0.28169014084507044,
+      "lo": 0.2612526655833701,
+      "hi": 0.3030705088453429
+     },
+     "payment": {
+      "k": 49,
+      "n": 1775,
+      "p": 0.0276056338028169,
+      "lo": 0.020943976883140047,
+      "hi": 0.03630758894518484
+     },
+     "contentDiffers": {
+      "k": 268,
+      "n": 1775,
+      "p": 0.15098591549295776,
+      "lo": 0.13508440476951586,
+      "hi": 0.16839483796232346
+     },
+     "aiSpecificDiff": {
+      "k": 27,
+      "n": 1775,
+      "p": 0.015211267605633802,
+      "lo": 0.010474972511112028,
+      "hi": 0.022041392897681734
+     },
+     "cross": {
+      "declaredAndEnforced": 229,
+      "declaredOnly": 161,
+      "enforcedOnly": 440,
+      "neither": 945
+     },
+     "edges": {
+      "other": 97,
+      "Fastly": 11,
+      "Akamai": 86,
+      "Cloudflare": 278,
+      "AWS": 26,
+      "DataDome": 1,
+      "Vercel": 1
+     },
+     "how": {
+      "http-403": 537,
+      "challenge:cloudflare": 72,
+      "http-451": 3,
+      "http-406": 8,
+      "challenge:datadome": 2,
+      "http-404": 10,
+      "challenge:perimeterx": 4,
+      "challenge:imperva": 4,
+      "http-471": 1,
+      "http-401": 2,
+      "http-502": 2,
+      "http-500": 5,
+      "challenge:aws-waf": 6,
+      "http-520": 2,
+      "http-521": 1,
+      "http-412": 1,
+      "challenge:generic": 1,
+      "http-503": 1,
+      "http-410": 1,
+      "challenge:akamai": 1,
+      "http-400": 1,
+      "http-405": 1,
+      "http-418": 1,
+      "http-530": 1,
+      "http-415": 1
+     }
+    }
+   },
+   "anyAi": {
+    "declaredFullBlock": {
+     "k": 462,
+     "n": 1775,
+     "p": 0.26028169014084507,
+     "lo": 0.24040198889931969,
+     "hi": 0.28119674844111225
+    },
+    "servedBlocked": {
+     "k": 1152,
+     "n": 1775,
+     "p": 0.6490140845070422,
+     "lo": 0.626510469025531,
+     "hi": 0.6708740996547409
+    },
+    "aiSpecificBlock": {
+     "k": 883,
+     "n": 1775,
+     "p": 0.49746478873239436,
+     "lo": 0.4742351977959556,
+     "hi": 0.5207053293909584
+    },
+    "payment": {
+     "k": 66,
+     "n": 1775,
+     "p": 0.03718309859154929,
+     "lo": 0.029333205138155852,
+     "hi": 0.04703192465071581
+    },
+    "aiSpecificDiff": {
+     "k": 113,
+     "n": 1775,
+     "p": 0.06366197183098592,
+     "lo": 0.053219375645932696,
+     "hi": 0.07598913685739185
+    },
+    "enforcedDespiteAllowed": {
+     "k": 691,
+     "n": 1775,
+     "p": 0.38929577464788734,
+     "lo": 0.36687489332763545,
+     "hi": 0.41219479383427965
+    }
+   },
+   "rq2": {
+    "anyAiDiff": {
+     "k": 113,
+     "n": 1775,
+     "p": 0.06366197183098592,
+     "lo": 0.053219375645932696,
+     "hi": 0.07598913685739185
+    },
+    "anySearchEngineDiff": {
+     "k": 118,
+     "n": 1775,
+     "p": 0.06647887323943662,
+     "lo": 0.05580061848225313,
+     "hi": 0.07902953048005576
+    },
+    "aiOnlyDiff": {
+     "k": 52,
+     "n": 1775,
+     "p": 0.029295774647887324,
+     "lo": 0.022410063222843554,
+     "hi": 0.03821448448087194
+    }
+   },
+   "roleSplit": {
+    "OpenAI": {
+     "trainingBlocked": 565,
+     "searchBlocked": 238,
+     "userBlocked": 271,
+     "n": 1775
+    },
+    "Anthropic": {
+     "trainingBlocked": 596,
+     "searchBlocked": 178,
+     "userBlocked": 186,
+     "n": 1775
+    },
+    "Perplexity": {
+     "trainingBlocked": 0,
+     "searchBlocked": 271,
+     "userBlocked": 208,
+     "n": 1775
+    }
+   }
+  }
+ ],
+ "sensitivity": [
+  {
+   "run": "wave1-head-de-residential",
+   "sets": [
+    {
+     "same": 0.8,
+     "margin": 0.1,
+     "domains": 6042,
+     "aiSpecificDiffDomains": 128,
+     "aiSpecificDiffPairs": 576
+    },
+    {
+     "same": 0.7,
+     "margin": 0.1,
+     "domains": 6042,
+     "aiSpecificDiffDomains": 115,
+     "aiSpecificDiffPairs": 527
+    },
+    {
+     "same": 0.9,
+     "margin": 0.1,
+     "domains": 6042,
+     "aiSpecificDiffDomains": 144,
+     "aiSpecificDiffPairs": 655
+    },
+    {
+     "same": 0.8,
+     "margin": 0.05,
+     "domains": 6042,
+     "aiSpecificDiffDomains": 130,
+     "aiSpecificDiffPairs": 575
+    },
+    {
+     "same": 0.8,
+     "margin": 0.2,
+     "domains": 6042,
+     "aiSpecificDiffDomains": 120,
+     "aiSpecificDiffPairs": 559
+    }
+   ]
+  },
+  {
+   "run": "wave2-head-de-residential",
+   "sets": [
+    {
+     "same": 0.8,
+     "margin": 0.1,
+     "domains": 1775,
+     "aiSpecificDiffDomains": 113,
+     "aiSpecificDiffPairs": 515
+    },
+    {
+     "same": 0.7,
+     "margin": 0.1,
+     "domains": 1775,
+     "aiSpecificDiffDomains": 103,
+     "aiSpecificDiffPairs": 478
+    },
+    {
+     "same": 0.9,
+     "margin": 0.1,
+     "domains": 1775,
+     "aiSpecificDiffDomains": 121,
+     "aiSpecificDiffPairs": 564
+    },
+    {
+     "same": 0.8,
+     "margin": 0.05,
+     "domains": 1775,
+     "aiSpecificDiffDomains": 114,
+     "aiSpecificDiffPairs": 519
+    },
+    {
+     "same": 0.8,
+     "margin": 0.2,
+     "domains": 1775,
+     "aiSpecificDiffDomains": 110,
+     "aiSpecificDiffPairs": 504
+    }
+   ]
+  }
+ ],
+ "crossVantage": {
+  "a": "wave1-head-de-residential",
+  "b": "wave2-head-de-residential",
+  "arms": {
+   "googlebot": {
+    "n": 1769,
+    "both": 227,
+    "onlyA": 6,
+    "onlyB": 5,
+    "kappa": 0.9727645411373136
+   },
+   "bingbot": {
+    "n": 1769,
+    "both": 235,
+    "onlyA": 4,
+    "onlyB": 4,
+    "kappa": 0.9806492192413925
+   },
+   "gptbot": {
+    "n": 1769,
+    "both": 560,
+    "onlyA": 16,
+    "onlyB": 2,
+    "kappa": 0.9766844500028558
+   },
+   "oai-searchbot": {
+    "n": 1769,
+    "both": 235,
+    "onlyA": 1,
+    "onlyB": 3,
+    "kappa": 0.9902557252434003
+   },
+   "chatgpt-user": {
+    "n": 1769,
+    "both": 270,
+    "onlyA": 3,
+    "onlyB": 1,
+    "kappa": 0.9913110748185714
+   },
+   "claudebot": {
+    "n": 1769,
+    "both": 590,
+    "onlyA": 15,
+    "onlyB": 3,
+    "kappa": 0.9772838174486992
+   },
+   "claude-searchbot": {
+    "n": 1769,
+    "both": 177,
+    "onlyA": 3,
+    "onlyB": 1,
+    "kappa": 0.9875689976845589
+   },
+   "claude-user": {
+    "n": 1769,
+    "both": 184,
+    "onlyA": 3,
+    "onlyB": 2,
+    "kappa": 0.9850154081247153
+   },
+   "perplexitybot": {
+    "n": 1769,
+    "both": 266,
+    "onlyA": 4,
+    "onlyB": 4,
+    "kappa": 0.9825167395547648
+   },
+   "perplexity-user": {
+    "n": 1769,
+    "both": 206,
+    "onlyA": 1,
+    "onlyB": 2,
+    "kappa": 0.9918104758627393
+   },
+   "meta-externalagent": {
+    "n": 1769,
+    "both": 336,
+    "onlyA": 2,
+    "onlyB": 4,
+    "kappa": 0.9890525629627186
+   },
+   "ccbot": {
+    "n": 1769,
+    "both": 496,
+    "onlyA": 9,
+    "onlyB": 3,
+    "kappa": 0.9833124490010895
+   }
+  }
+ }
+}

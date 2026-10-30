@@ -1,0 +1,476 @@
+% What the Web Shows to AI -- source for ACM SIGCOMM CCR (short technical paper) and arXiv.
+% CCR reviews with author names (\anonfalse); \anontrue gives an anonymous version.
+% Template: CCR example (github.com/schmiste/ccr-template), acmart sigconf, US Letter, 9 pt.
+% NO RESULT IS TYPED BY HAND. Every result is \R{key} from numbers.tex, a table from tables/*.tex
+% (src/analyze.js, src/extra.js) or a figure from fig-arms-*.dat (src/paper-numbers.js); an unknown
+% key stops the build. `node src/check-paper.js` lists every digit in this file outside \R{}.
+\documentclass[sigconf,nonacm]{acmart}
+\setcopyright{none}
+\settopmatter{printacmref=false, printfolios=true}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\setlength{\footskip}{20pt}
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[L]{ACM SIGCOMM Computer Communication Review}\fancyfoot[R]{\thepage}}
+\fancypagestyle{firstpagestyle}{\fancyhf{}\fancyfoot[L]{ACM SIGCOMM Computer Communication Review}\fancyfoot[R]{\thepage}}
+\pagestyle{plain}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{patterns}
+\pgfplotsset{compat=1.18}
+\usepackage{balance}
+
+\newif\ifanon
+\anonfalse
+
+\input{numbers.tex}
+\makeatletter
+\newcommand{\R}[1]{\@ifundefined{R@#1}{\PackageError{numbers}{Unknown result key `#1'}{Run node src/paper-numbers.js}}{\csname R@#1\endcsname}}
+\makeatother
+\newcommand{\pct}[1]{\R{#1.p}\,\%}
+\newcommand{\ci}[1]{\R{#1.ci}}
+\newcommand{\tbl}[1]{\IfFileExists{tables/#1.tex}{\input{tables/#1.tex}}{\PackageError{tables}{Missing tables/#1.tex}{Run node src/analyze.js}}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\newcommand{\rng}[1]{\R{#1.min}--\R{#1.max}\,\%}
+% OSF registration DOI
+\newcommand{\osfdoi}{\href{https://doi.org/10.17605/OSF.IO/PRWNG}{doi:10.17605/OSF.IO/PRWNG}}
+
+\begin{document}
+
+\title{What the Web Shows to AI: Declared versus Enforced Access for Training, Search and
+User-Triggered Agents}
+
+\ifanon
+  \author{Anonymous Author(s)}
+\else
+  \author{H\'ector P\'io-Rend\'on Gutmann}
+  \affiliation{\institution{Independent researcher}\country{Germany}}
+\fi
+
+\begin{abstract}
+Studies of AI crawler blocking compare a page fetched with an AI user agent to one fetched with a
+browser's. Such a request also claims an identity it cannot prove. We request the Tranco top
+\R{design.headList} and a random sample of smaller sites with \R{design.ai} AI agents of five
+operators, two neutral controls and spoofed Googlebot and Bingbot, from a residential and a
+datacenter vantage point. Robots.txt rules and server refusals mostly fall on different sites.
+Beyond the rate at which sites refuse a spoofed search engine, only training crawlers are
+refused more often; search and user-triggered agents are not. Where a site refused a spoofed
+user-triggered agent, the real ChatGPT also failed on \pct{val2.ChatGPT.blocked} of checks; the
+real Claude was turned away mostly by its own fetch tool, which honours robots.txt.
+HTTP~402 to AI agents is AI-specific but carries no price, as unverified requests cannot.
+\end{abstract}
+
+\ccsdesc[500]{Networks~Network measurement}
+\ccsdesc[300]{Information systems~Web mining}
+
+\keywords{robots.txt, AI crawlers, web measurement, bot management, pay-per-crawl}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+Website owners are asked to decide whether AI companies may collect their pages. The standard
+instrument is robots.txt \citep{rfc9309}: a site names crawler tokens such as \texttt{GPTBot}
+and the paths they should not fetch. Many studies count these rules
+\citep{longpre2024consent,fletcher2024news,steinacker2026misinfo}. A robots.txt file is a request,
+though; whom a site actually serves is decided by its server, its content-delivery network (CDN)
+and its bot management. Recent work therefore also requests pages with AI crawler user agents and
+compares the answer with a browser's \citep{liu2025somesite,steinacker2026misinfo,hasdata2026index}.
+
+That comparison mixes three causes. A site may refuse anything that looks like a bot; it may
+refuse a request that \emph{claims} a known crawler identity but does not come from that
+crawler's network; or it may refuse AI agents as such. We separate them. Every homepage is
+requested with a browser user agent, \R{design.ai} AI agents of five operators in three roles
+(training, search, user-triggered), spoofed Googlebot and Bingbot, and two neutral controls. A
+refusal is \emph{AI-specific} only if both controls are served. Spoofed search engines give the
+baseline: no site means to keep out the real Googlebot, so refusing its name from our address
+measures identity verification. We find:
+\begin{itemize}
+  \item \textbf{Declared and enforced blocks mostly fall on different sites.} Of the sites that
+        block an AI agent in robots.txt or AI-specifically on the server, only
+        \rng{w1head.de.x.crossAiBothShare} (per agent) do both among top sites.
+  \item \textbf{Only training crawlers exceed the verification baseline.} On sites that serve
+        both spoofed search engines, training crawlers are still refused on
+        \rng{w1head.de.x.beyondRef.training} of top sites, search and user-triggered agents on
+        \rng{w1head.de.x.beyondRef.search} and \rng{w1head.de.x.beyondRef.user}. Paired
+        tests against spoofed Googlebot reject equality for all training crawlers and for no
+        search or user-triggered agent in the excess direction.
+  \item \textbf{Spoofed refusals predict real ones only in part.} Where a site refused the spoofed
+        ChatGPT-User, the real ChatGPT also failed in \R{val2.ChatGPT.blocked.k} of
+        \R{val2.ChatGPT.blocked.n} checks, against \R{val2.ChatGPT.served.k} of
+        \R{val2.ChatGPT.served.n} where it was served. \R{val2.Claude.blocked.tool} of the
+        \R{val2.Claude.blocked.k} refusals the real Claude met came from its own fetch tool, not
+        from the site.
+  \item \textbf{HTTP~402 is AI-specific but not a price.} It reaches AI agents on
+        \ci{w1head.de.any.payment} of top sites; the controls are served on
+        \ci{w1head.de.x.pay.controlsServed} of them, but only \R{w1head.de.pay.priceHeader.k}
+        sends a price, which pay-per-crawl gives only to registered, signing crawlers
+        \citep{cloudflare2025paypercrawl}.
+\end{itemize}
+The study was pre-registered; analyses added later are marked exploratory.
+
+\section{Related Work}
+\label{sec:related}
+\paragraph{Declared policy.} \citet{longpre2024consent} audit robots.txt and terms of service
+behind large AI training corpora and find AI restrictions rising quickly;
+\citet{fletcher2024news} counts AI blocks in robots.txt of leading news sites.
+\citet{kim2025scrapers} observe in server logs that bots follow robots.txt selectively, least for
+strict rules.
+
+\paragraph{Enforced policy.} \citet{liu2025somesite} request the top 10k sites with a headless
+browser and with two Anthropic user agents, chosen because Anthropic published no IP ranges that
+sites could verify; they find active blocking common and rarely backed by robots.txt, and
+examine Cloudflare's AI-bot blocking. \citet{steinacker2026misinfo} compare robots.txt rules and
+user-agent refusals between reputable news and misinformation sites. An industry report (not
+peer reviewed) tests GPTBot against a browser on about two thousand sites
+\citep{hasdata2026index}. These studies compare one AI user agent with a browser. We add
+neutral and search-engine baselines that separate identity verification from AI policy, three
+roles per operator, a random sample of smaller sites, two vantage points, and checks with the
+real agents of the same role.
+
+\paragraph{Real agents and cloaking.} \citet{seiden2026canary} serve canary tokens to scrapers
+and ask LLMs about them to learn which scraper feeds which model; we use canary pages only to show
+that an agent fetches live. Serving crawlers a different page is known from search spam;
+\citet{invernizzi2016cloak} detect it by comparing fetches under several browsing profiles.
+
+\section{Method}
+\label{sec:method}
+The protocol was frozen before the main run (\texttt{PROTOCOL.md}, commit \texttt{486ec1f}, archived with the registration) and
+registered on OSF the same day
+\ifanon(link withheld)\else(\url{https://osf.io/prwng}, \osfdoi)\fi. Analyses not in it are
+marked \emph{exploratory}; every change is in its deviation log (Section~\ref{sec:deviations}).
+
+\paragraph{Population.} Tranco list GQ3LK \citep{lepochat2019tranco}, in two strata reported
+separately: the \emph{head}, ranks 1 to \R{design.headList}, and the \emph{tail},
+\R{design.tailList} domains drawn uniformly at random from the ranks below. A domain is measured
+only if its robots.txt is reachable, since RFC~9309 reads an unreachable file as ``disallow
+all'', and allows our study token. In the head, \R{w1head.de.funnel.robotsUnreachable} domains
+failed the first test; \R{w1head.de.x.unreach.dns} of them have no DNS entry,
+\R{w1head.de.x.unreach.connect} refused or timed out the connection,
+\R{w1head.de.x.unreach.tls} failed TLS and \R{w1head.de.x.unreach.5xx} answered with a 5xx
+status; only the last and some of the timeouts can be refusals of our requests. \R{w1head.x.vf.both} were unreachable
+from both vantage points. \R{w1head.de.funnel.robotsDisallowStudy} disallowed our token,
+\R{w1head.de.x.disallow.all} of them by blocking every crawler name we use;
+\R{w1head.de.funnel.noWebsite} served no HTML. Of \R{w1head.de.funnel.probed} probed domains,
+\R{w1head.de.funnel.comparable} were \emph{comparable}: both browser-UA fetches returned the
+same readable page. In the tail, \R{w1tail.de.funnel.comparable} of
+\R{w1tail.de.funnel.probed} probed domains were comparable.
+
+\paragraph{Agents.} Each homepage is requested with \R{design.arms} user agents: two identical
+requests with a desktop Chrome user agent (the \emph{browser-UA} baseline), Googlebot and
+Bingbot, \R{design.ai} AI agents with the user-agent strings their operators publish, and two
+controls in the same crawler-style shape whose product tokens are
+\texttt{\R{design.ua.control-plain.product}} and \texttt{\R{design.ua.control-bot.product}}. A
+rule against ``bot'' in the user agent refuses the second control, so such sites never count as
+AI-specific. Roles follow the operators' descriptions: training (GPTBot, ClaudeBot,
+Meta-ExternalAgent, CCBot), search (OAI-SearchBot, Claude-SearchBot, PerplexityBot) and
+user-triggered (ChatGPT-User, Claude-User, Perplexity-User).
+
+\paragraph{Procedure.} We fetch robots.txt with a study user agent that links to an information
+and opt-out page, then the homepage with the browser user agent. Every other agent then requests
+its final URL once, in random order, \R{design.gapMs}\,ms apart, without cookies or JavaScript,
+with no retries. All arms share one HTTP client, and thus one TLS fingerprint.
+
+\paragraph{Classification.} A response is \emph{blocked} on a 4xx or 5xx status (except 402 and
+429), a bot-management challenge or an empty 202, and only if a later request to the same site
+still got the page, so that a site that stops answering us is not counted. Content
+\emph{differs} when the Jaccard similarity of word 3-shingles to the browser-UA page is below
+\R{design.same} and at least \R{design.margin} below that of the two browser-UA fetches.
+Declared policy is a full block of the agent's token in robots.txt under RFC~9309 matching. A
+block is \emph{AI-specific} when both controls got the browser-UA page. The unit is the
+comparable domain; brackets give Wilson 95\,\% intervals.
+
+\paragraph{Baseline test (exploratory).} Per AI agent we compare its AI-specific blocks with
+spoofed Googlebot's on the same sites (exact McNemar test, Holm-adjusted over the
+\R{design.ai} agents), and count AI-specific blocks on sites that serve both spoofed search
+engines, which identity verification cannot explain.
+
+\paragraph{Vantage points and waves.} The residential vantage point is a consumer line in Germany
+(AS3320), the datacenter one a GitHub-hosted runner in Microsoft Azure. Wave~1 measured both
+strata from both within two days. Wave~2 measured again every domain with a block, a 402 or a
+content difference in wave~1 (\R{design.wave2.head} head and \R{design.wave2.tail} tail
+domains), one day later.
+
+\paragraph{Real agents.} Two rounds, each through the author's consumer accounts, in a fresh
+chat per check, asking the real ChatGPT, Claude or Perplexity to open a homepage and state its
+main heading and topic; answers are coded as content, refused/failed or unclear against the
+browser-UA page. These agents fetch from their operators' networks. The pre-registered round
+drew head sites with an AI-specific block for GPTBot, ClaudeBot or PerplexityBot. The second
+(exploratory) round draws, per operator, \R{design.val2.blocked} sites where its spoofed
+user-triggered agent had an AI-specific block and \R{design.val2.served} where it was served;
+repeats every ``content'' answer in a fresh chat that forbids browsing, coding it unclear if the
+model names the heading from memory; and first opens a canary page with a random phrase that
+exists nowhere else, to show that the agent fetches live. An agent that fails its canary is not
+tested further. Refusals are split into those by the agent's own fetch tool (``site blocked'',
+robots rules) and those by the site; an answer based on an outdated cached copy is unclear.
+
+\paragraph{Real browser (exploratory).} To test the browser-UA baseline, \R{bc.comparable.n}
+comparable and \R{bc.notComparable.n} not comparable head sites, drawn at random, were opened
+once in Microsoft Edge (Playwright, headless) from the residential line.
+
+\section{Results}
+\label{sec:results}
+Unless stated otherwise: head stratum, wave~1, residential vantage point.
+
+\subsection{Declared versus enforced}
+Robots.txt fully blocks at least one AI agent on \ci{w1head.de.any.declaredFullBlock} of top
+sites. The server refuses at least one AI agent while serving both controls on
+\ci{w1head.de.any.aiSpecificBlock}; on \ci{w1head.de.any.enforcedDespiteAllowed} the refused agent
+is allowed by robots.txt. For GPTBot, \R{w1head.de.x.crossAi.gptbot.declaredAndEnforced} sites
+declare and AI-specifically enforce a block, \R{w1head.de.x.crossAi.gptbot.declaredOnly} only
+declare it and \R{w1head.de.x.crossAi.gptbot.enforcedOnly} only enforce it
+(Table~\ref{tab:cross}). Among smaller sites the overlap is
+\rng{w1tail.de.x.crossAiBothShare}; they declare less (\ci{w1tail.de.any.declaredFullBlock})
+and enforce more (\ci{w1tail.de.any.aiSpecificBlock}). Tokens we did not request with are
+declared at similar rates: Google-Extended on \ci{w1head.de.x.tok.Google-Extended},
+Bytespider on \ci{w1head.de.x.tok.Bytespider} of top sites.
+
+\begin{table}[t]
+\centering\small\resizebox{\columnwidth}{!}{\tbl{wave1-head-crossai}}
+\caption{robots.txt full block against AI-specific server block, per AI agent (head, wave~1,
+residential, comparable sites).}
+\label{tab:cross}
+\end{table}
+
+\subsection{Who is refused}
+\label{sec:who}
+Spoofed Googlebot and Bingbot are almost never blocked in robots.txt
+(\pct{w1head.de.arm.googlebot.declaredFullBlock} and \pct{w1head.de.arm.bingbot.declaredFullBlock})
+but refused AI-specifically on \ci{w1head.de.arm.googlebot.aiSpecificBlock} and
+\ci{w1head.de.arm.bingbot.aiSpecificBlock} of top sites: these sites serve two unknown crawlers
+yet refuse a known name sent from outside its network. Search and user-triggered AI agents are
+refused at about this rate (\rng{w1head.de.roleAiSpecificBlock.search} and
+\rng{w1head.de.roleAiSpecificBlock.user} per agent), training crawlers more often (\rng{w1head.de.roleAiSpecificBlock.training}).
+
+The overlap per site shows that this is not a coincidence of rates (Figure~\ref{fig:arms}).
+\rng{w1head.de.x.alsoRef.search} of the AI-specific blocks of search agents and
+\rng{w1head.de.x.alsoRef.user} of those of user-triggered agents fall on sites that also refuse
+a spoofed search engine, against \rng{w1head.de.x.alsoRef.training} for training crawlers. On
+sites that serve both search engines, training crawlers are still refused on
+\rng{w1head.de.x.beyondRef.training}, search and user-triggered agents on only
+\rng{w1head.de.x.beyondRef.search} and \rng{w1head.de.x.beyondRef.user}. Paired against spoofed
+Googlebot, all \R{w1head.de.x.moreThanGb.training} training crawlers are refused more often
+(\R{w1head.de.x.pHolmMax.training}, Holm); no search or user-triggered agent is, and
+\R{w1head.de.x.lessThanGb.search} search and \R{w1head.de.x.lessThanGb.user} user-triggered
+agent are refused significantly \emph{less} often. The same holds among smaller sites (beyond
+the baseline: training \rng{w1tail.de.x.beyondRef.training}, search
+\rng{w1tail.de.x.beyondRef.search}, user-triggered \rng{w1tail.de.x.beyondRef.user}) and from
+the datacenter (training \rng{w1head.az.x.beyondRef.training}, search
+\rng{w1head.az.x.beyondRef.search}). Most sites that refuse search and user-triggered agents
+thus appear to check identities, not to target AI; only training crawlers meet a rule of their
+own.
+
+\begin{figure*}[t]
+\centering
+% Bars and their error bars are placed by explicit y offsets (axis units), not by bar shift:
+% error bars drawn inside an xbar plot become bars themselves.
+\pgfplotsset{
+  armbars/.style={xbar, bar width=0.25, bar shift=0pt, area legend},
+  armerr/.style={forget plot, sharp plot, draw=none, mark=none,
+    error bars/.cd, x dir=both, x explicit, error bar style={black, line width=0.4pt},
+    error mark options={rotate=90, mark size=1.2pt, black}},
+}
+\newcommand{\armseries}[1]{%
+  \addplot[armbars, draw=black, fill=white] table[x=decl, y expr=\thisrow{y}-0.28]{#1};
+  \addplot[armerr] table[x=decl, y expr=\thisrow{y}-0.28, x error minus=declLo, x error plus=declHi]{#1};
+  \addplot[armbars, draw=black, pattern=north east lines] table[x=spec, y=y]{#1};
+  \addplot[armerr] table[x=spec, y=y, x error minus=specLo, x error plus=specHi]{#1};
+  \addplot[armbars, draw=black, fill=black] table[x=beyond, y expr=\thisrow{y}+0.28]{#1};
+  \addplot[armerr] table[x=beyond, y expr=\thisrow{y}+0.28, x error minus=beyondLo, x error plus=beyondHi]{#1};
+  \draw[densely dashed, gray] (axis cs:0,3.5) -- (axis cs:16,3.5);
+  \draw[densely dashed, gray] (axis cs:0,6.5) -- (axis cs:16,6.5);
+  \draw[densely dashed, gray] (axis cs:0,9.5) -- (axis cs:16,9.5);}
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=2 by 1, horizontal sep=0.6cm, yticklabels at=edge left},
+  width=0.5\textwidth, height=8cm, xmin=0, xmax=16,
+  y dir=reverse, ytick={0,...,11}, yticklabels from table={fig-arms-head.dat}{label},
+  y tick label style={font=\scriptsize}, x tick label style={font=\scriptsize},
+  xlabel={share of comparable sites (\%)}, xlabel style={font=\scriptsize},
+  title style={font=\small}, enlarge y limits=0.05, xmajorgrids, grid style={gray!25},
+  legend style={font=\scriptsize, at={(0.97,0.03)}, anchor=south east, cells={anchor=west}},
+  unbounded coords=discard]
+\nextgroupplot[title={Top sites (head)}]
+  \armseries{fig-arms-head.dat}
+  \legend{robots.txt full block, AI-specific block, \ldots{} with both search engines served}
+\nextgroupplot[title={Smaller sites (tail sample)}]
+  \armseries{fig-arms-tail.dat}
+\end{groupplot}
+\end{tikzpicture}
+\caption{Per agent: robots.txt full block, AI-specific server block, and AI-specific block on
+sites that serve both spoofed search engines (exploratory), with Wilson 95\,\% intervals
+(wave~1, residential). Groups from top: training, search, user-triggered agents, spoofed search
+engines.}
+\label{fig:arms}
+\end{figure*}
+
+\subsection{Real agents}
+\label{sec:validation}
+In the pre-registered round the real user-triggered agent was refused or failed on
+\R{val.ChatGPT.refused-failed} of \R{val.ChatGPT.alsoBlocked.n} decided checks for ChatGPT,
+\R{val.Claude.refused-failed} of \R{val.Claude.alsoBlocked.n} for Claude and
+\R{val.Perplexity.refused-failed} of \R{val.Perplexity.alsoBlocked.n} for Perplexity. Those sites
+had refused the operator's \emph{crawler}, so the round mixes verification with role. Split by what
+the spoofed user-triggered agent of the same operator met on the same site, the real ChatGPT was
+refused on \ci{val.ChatGPT.same.ai-specific-block} of sites that refused its spoofed twin and on
+\ci{val.ChatGPT.same.served} of sites that served it; for Claude the shares are
+\ci{val.Claude.same.ai-specific-block} and \ci{val.Claude.same.served}.
+
+The second round tests this directly. ChatGPT and Claude read their canary pages live;
+Perplexity (free plan) failed its canary twice, so its round was not run: its answers could not
+show live access. Where the spoofed ChatGPT-User had been refused, the real ChatGPT failed on
+\ci{val2.ChatGPT.blocked} of decided checks; where it had been served, on
+\ci{val2.ChatGPT.served}. For Claude the shares are \ci{val2.Claude.blocked} and
+\ci{val2.Claude.served}, but \R{val2.Claude.blocked.tool} of the \R{val2.Claude.blocked.k}
+refusals came from Claude's own fetch tool, which declined the site before fetching,
+\R{val2.Claude.blocked.toolRobots} of them on sites whose robots.txt fully disallows Claude-User;
+\R{val2.Claude.blocked.site} were refusals by the site. Another \R{val2.Claude.blocked.stale}
+answers rested on an outdated cached copy. The memory control flagged
+\R{val2.ChatGPT.blocked.memKnows} of \R{val2.ChatGPT.blocked.memChecks} ChatGPT and
+\R{val2.Claude.blocked.memKnows} of \R{val2.Claude.blocked.memChecks} Claude content answers
+on these sites. A spoofed refusal thus predicts a real one for ChatGPT on about half of the
+sites, while the real agent rarely fails where the spoof was served; for Claude, what the real agent meets is
+largely its operator's own robots.txt compliance, which a spoofed measurement cannot observe.
+Spoofed shares describe how sites treat traffic that \emph{claims} to be an AI agent.
+
+\subsection{Robustness}
+\label{sec:robust}
+\emph{Browser baseline.} On comparable sites the real browser got a readable page on
+\ci{bc.comparable.realReadable} and the same title as our browser-UA fetch on
+\ci{bc.comparable.sameTitle}; a headless browser is itself refused by some bot management, so it
+is no gold standard. On not comparable sites our client was refused on
+\ci{bc.notComparable.oursRefused}, but the real browser got a readable page where ours was
+refused on only \ci{bc.notComparable.oursRefusedRealReadable}: few sites drop out because they
+single out our client; most refuse automated clients of any kind.
+
+\emph{Order.} Refusals of any kind are as frequent early in the random order
+(\ci{w1head.de.x.order.rawEarly}) as late (\ci{w1head.de.x.order.rawLate}), so the burst of
+requests does not itself trigger blocking. \ci{w1head.de.x.order.unconfirmedShare} of refusals of
+AI agents had no later served request and are not counted; since the order is random per site,
+this lowers all shares alike.
+
+\emph{Who refuses (exploratory).} Of AI-specific blocks of AI agents,
+\ci{w1head.de.x.layer.ai.signature} carry a bot-management signature (challenge page,
+\texttt{cf-mitigated}, CDN block page), \ci{w1head.de.x.layer.ai.cdn-header-only} pass a CDN
+without one and \ci{w1head.de.x.layer.ai.none} show neither; CDN headers alone do not show that
+the CDN refused.
+
+\emph{Vantage point and time.} From the datacenter, the share with an AI-specific block is
+\ci{w1head.az.any.aiSpecificBlock}; per-agent agreement between vantage points is
+$\kappa=\R{w1head.cv.kappaAi.min}$--$\R{w1head.cv.kappaAi.max}$ in the head and
+$\R{w1tail.cv.kappaAi.min}$--$\R{w1tail.cv.kappaAi.max}$ in the tail. Wave~2, one day later,
+shows repeatability, not stability over time: almost all AI-specific blocks recur
+(Table~\ref{tab:repeat}).
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{llrr}
+\toprule
+Stratum & Vantage & Recurring blocks & $\kappa$ \\
+\midrule
+Head & residential & \rng{w1v2head.de.repeatAi} & \R{w1v2head.de.kappaAi.min}--\R{w1v2head.de.kappaAi.max} \\
+Head & datacenter & \rng{w1v2head.az.repeatAi} & \R{w1v2head.az.kappaAi.min}--\R{w1v2head.az.kappaAi.max} \\
+Tail & residential & \rng{w1v2tail.de.repeatAi} & \R{w1v2tail.de.kappaAi.min}--\R{w1v2tail.de.kappaAi.max} \\
+Tail & datacenter & \rng{w1v2tail.az.repeatAi} & \R{w1v2tail.az.kappaAi.min}--\R{w1v2tail.az.kappaAi.max} \\
+\bottomrule
+\end{tabular}
+\caption{Wave-1 AI-specific blocks recurring in wave~2, range over AI agents. Wave~2 covered
+flagged domains only, so $\kappa$ is not a population value.}
+\label{tab:repeat}
+\end{table}
+
+\subsection{Pay-per-crawl}
+At least one AI agent received HTTP~402 on \ci{w1head.de.any.payment} of top sites
+(\R{w1head.de.pay.domains} sites) and \ci{w1tail.de.any.payment} of smaller sites. On these top
+sites the controls were served on \ci{w1head.de.x.pay.controlsServed} and a spoofed search engine
+got a 402 on \ci{w1head.de.x.pay.searchEngine402}: the 402 targets AI agents. Only
+\R{w1head.de.pay.priceHeader.k} sent the \texttt{crawler-price} header. This is expected and
+says little about a market: pay-per-crawl quotes prices only to crawlers registered with the CDN
+that sign their requests \citep{cloudflare2025paypercrawl}, which a spoofed request cannot do.
+
+\subsection{Different content}
+\label{sec:rq2}
+An AI agent got substantially different content while both controls got the browser-UA page on
+\ci{w1head.de.rq2.anyAiDiff} of top sites, the same share as for Googlebot or Bingbot
+(\ci{w1head.de.rq2.anySearchEngineDiff}). The planned manual coding was not done
+(Section~\ref{sec:deviations}), so these are upper bounds and we claim no AI-specific content.
+
+\section{Ethics}
+\label{sec:ethics}
+The study has no human subjects; we followed the principles of the Menlo Report
+\citep{menlo2012}. As an independent researcher the author had no institutional review board;
+the design was published on OSF before the main run.
+
+\emph{Load.} One request per agent and homepage, \R{design.gapMs}\,ms apart, homepages only,
+no retries after an HTTP answer.
+
+\emph{robots.txt.} We obeyed it for our study token and did not contact sites further whose
+robots.txt was unreachable. The agent requests, however, reached sites whose robots.txt
+disallows those agents' tokens. We judged this acceptable because the rules address the
+operators' crawlers, each such site received one homepage request per token, the request is the
+minimal observation of enforcement and the established method of prior work
+\citep{liu2025somesite,steinacker2026misinfo}, and no content beyond page features is kept or
+released.
+
+\emph{Spoofed identities.} Our requests carry the names of Google, Microsoft and five AI
+operators. A site that verifies identities classes them as fake; one that does not may log
+about a dozen requests from our address as these operators' traffic. We consider this harm
+small and disclose it here and on the information page. The opt-out link was in the study user
+agent only, which fetched robots.txt; the agent requests carried the operators' strings.
+Opt-outs received: \R{w1head.de.funnel.optedOut}.
+
+\emph{Real agents.} The checks ran in the author's own consumer accounts, typed in sequence by a
+browser assistant under the author's supervision. Automated use of consumer
+interfaces may conflict with operators' terms; we kept it to the checks reported. Adult sites
+were skipped.
+
+\emph{Release.} No site is named. The per-site file replaces each domain with a keyed hash and its
+rank with a rank band; this stops casual naming, not determined re-identification.
+
+\section{Limitations}
+\label{sec:limits}
+\textbf{Spoofed user agents} come from our two addresses only; the real-agent checks are small
+and through personal accounts. \textbf{Homepages only, no JavaScript;} sites that refuse our
+client drop out as not comparable (Section~\ref{sec:robust}). \textbf{The robots.txt gate}
+excludes sites that disallow our token; they declare more AI blocks
+(\R{w1head.de.x.disallow.gptbot} of \R{w1head.de.x.disallow.n} block GPTBot), so declared shares
+are lower bounds. \textbf{Content differences} are uncoded. \textbf{Time:} two waves one day
+apart, one residential line in one country. \textbf{Exploratory} analyses were chosen after
+seeing the pre-registered results.
+
+\section{Deviations from the Protocol}
+\label{sec:deviations}
+(i)~Residential runs restarted automatically after native crashes of the runtime; domains in
+flight were measured again from scratch. (ii)~An analysis bug passed the array index as threshold,
+so all but the first run were analysed without robots.txt parsing; it was found and fixed on the
+first analysis, before any result was reported. (iii)~The real-agent prompt asked for the main
+heading and topic instead of a verbatim quote, which one agent declined. (iv)~The manual coding
+of content differences was not done. (v)~Wave~2 ran one day after wave~1 instead of at least
+seven days later, and no later wave followed. (vi)~The baseline test, the real-browser check, the
+second real-agent round, the signature attribution and the order analysis were added after an
+internal pre-review. (vii)~In that round Perplexity failed its canary and was not tested, and
+adult sites were skipped.
+
+\section{Conclusion}
+What robots.txt says and what servers do are two policies that rarely coincide on the same site.
+Measuring the second by spoofing user agents mixes AI policy with verification of crawler
+identity. With spoofed search engines as a baseline, only training crawlers meet AI-specific
+rules; the refusals that search and user-triggered agents meet are mostly identity checks.
+Real agents bring a third party into view: the operator's own fetch tool, which may decline a
+site because of its robots.txt before the site can decide. Studies of AI access should report such
+baselines, test real agents of the same role, and not read a 402 to an unverified request as a
+price.
+
+\begin{acks}
+The measurement software, the analysis scripts and drafts of this text were written with the
+help of Claude (Anthropic), a generative AI assistant, under the author's direction. Every
+reported number is generated from the result files. The author is responsible for the content.
+\end{acks}
+
+\paragraph{Availability.} Code, aggregate results and the hashed per-site file are in the study
+repository (\url{https://github.com/Nu1111111111/ai-web-measurement}). Raw responses are not released (third-party content); the
+hash key and per-domain files are available to the editor and reviewers on request.
+
+\balance
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{refs}
+\end{document}

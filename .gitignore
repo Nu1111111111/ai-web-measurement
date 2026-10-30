@@ -1,0 +1,18 @@
+node_modules/
+.env*
+# Secret key for the hashed release file; back it up outside the repo.
+config/.domain-hash.key
+# Measurements stay local (raw bodies of third-party sites); they travel as data/<run> branches.
+runs/
+results/*/per-domain.csv
+results/*/review-queue.csv
+results/*/validation/
+results/*/coding/
+paper/build/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+results/*/validation2/
+results/*/browsercheck/

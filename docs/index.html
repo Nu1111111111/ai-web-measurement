@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIWebMeasure — research measurement</title>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 42rem; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; background: #fff; }
+  code { background: #f2f2f2; padding: 0 .3em; }
+  h1 { font-size: 1.5rem; }
+</style>
+</head>
+<body>
+<h1>AIWebMeasure</h1>
+<p>You are seeing requests from <code>AIWebMeasure/1.0</code> because your site is on the
+<a href="https://tranco-list.eu/">Tranco</a> list of popular domains. This is an academic,
+non-commercial measurement of how websites respond to AI crawlers.</p>
+
+<h2>What we fetch</h2>
+<ul>
+  <li><code>/robots.txt</code> once, with the <code>AIWebMeasure</code> user agent.</li>
+  <li>Your <strong>homepage only</strong>, about 16 times within ~10 seconds, each time with a
+    different publicly documented user-agent string (browsers, search engines, AI crawlers,
+    neutral controls), to compare the responses. Nothing else is crawled.</li>
+  <li>This is repeated at most a few times over several months.</li>
+</ul>
+<p>We publish aggregate statistics only. No website is named in our publications.</p>
+
+<h2>Opt out</h2>
+<p>Add to your robots.txt:</p>
+<pre><code>User-agent: AIWebMeasure
+Disallow: /</code></pre>
+<p>We check robots.txt before every visit and stop immediately if our token is disallowed.
+You can also ask to be removed from all future waves, or ask anything about the study, by
+email (address on the live page linked from our user agent). We answer within a few days and remove
+opted-out domains from every later measurement.</p>
+<p><small>Independent research project, 2026. No data is sold or shared with AI companies.</small></p>
+</body>
+</html>

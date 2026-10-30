@@ -1,0 +1,9 @@
+{
+  "name": "browser-check",
+  "private": true,
+  "type": "module",
+  "description": "Real-browser check of the browser-UA baseline (PROTOCOL.md §9, 2026-10-29). Uses the installed Microsoft Edge; downloads no browser.",
+  "dependencies": {
+    "playwright-core": "1.48.2"
+  }
+}

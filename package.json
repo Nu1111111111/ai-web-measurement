@@ -1,0 +1,16 @@
+{
+  "name": "ai-web-measurement",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "What the web shows to AI crawlers: declared (robots.txt) vs enforced (server) policy, cloaking and pay-per-crawl on the Tranco top 10k.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test",
+    "list": "node src/list.js",
+    "measure": "node src/measure.js",
+    "analyze": "node src/analyze.js",
+    "fetch-remote": "node src/fetch-remote.js"
+  },
+  "license": "MIT"
+}

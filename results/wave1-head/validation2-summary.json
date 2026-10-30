@@ -1,0 +1,174 @@
+{
+ "generated": "2026-10-29T22:43:10.947Z",
+ "exploratory": true,
+ "agents": {
+  "ChatGPT": {
+   "canary": {
+    "checks": 1,
+    "got-content": 1,
+    "refused/failed": 0,
+    "unclear": 0,
+    "unclear-memory": 0,
+    "not-run": 0,
+    "toolBlocked": 0,
+    "toolBlockedRobots": 0,
+    "stale": 0,
+    "refused": {
+     "k": 0,
+     "n": 1,
+     "p": 0,
+     "lo": 0,
+     "hi": 0.7934506882081973
+    }
+   },
+   "blocked": {
+    "checks": 40,
+    "got-content": 16,
+    "refused/failed": 17,
+    "unclear": 1,
+    "unclear-memory": 0,
+    "not-run": 6,
+    "toolBlocked": 0,
+    "toolBlockedRobots": 0,
+    "stale": 0,
+    "refused": {
+     "k": 17,
+     "n": 33,
+     "p": 0.5151515151515151,
+     "lo": 0.3521837533264368,
+     "hi": 0.6749595800367185
+    }
+   },
+   "served": {
+    "checks": 15,
+    "got-content": 14,
+    "refused/failed": 0,
+    "unclear": 1,
+    "unclear-memory": 0,
+    "not-run": 0,
+    "toolBlocked": 0,
+    "toolBlockedRobots": 0,
+    "stale": 0,
+    "refused": {
+     "k": 0,
+     "n": 14,
+     "p": 0,
+     "lo": 0,
+     "hi": 0.21531080540298045
+    }
+   }
+  },
+  "Claude": {
+   "canary": {
+    "checks": 1,
+    "got-content": 1,
+    "refused/failed": 0,
+    "unclear": 0,
+    "unclear-memory": 0,
+    "not-run": 0,
+    "toolBlocked": 0,
+    "toolBlockedRobots": 0,
+    "stale": 0,
+    "refused": {
+     "k": 0,
+     "n": 1,
+     "p": 0,
+     "lo": 0,
+     "hi": 0.7934506882081973
+    }
+   },
+   "blocked": {
+    "checks": 40,
+    "got-content": 17,
+    "refused/failed": 11,
+    "unclear": 4,
+    "unclear-memory": 3,
+    "not-run": 5,
+    "toolBlocked": 9,
+    "toolBlockedRobots": 6,
+    "stale": 4,
+    "refused": {
+     "k": 11,
+     "n": 28,
+     "p": 0.39285714285714285,
+     "lo": 0.23565686440826128,
+     "hi": 0.5759095584001969
+    }
+   },
+   "served": {
+    "checks": 15,
+    "got-content": 11,
+    "refused/failed": 1,
+    "unclear": 2,
+    "unclear-memory": 0,
+    "not-run": 1,
+    "toolBlocked": 0,
+    "toolBlockedRobots": 0,
+    "stale": 0,
+    "refused": {
+     "k": 1,
+     "n": 12,
+     "p": 0.08333333333333333,
+     "lo": 0.01486509423966938,
+     "hi": 0.35387991372124555
+    }
+   }
+  },
+  "Perplexity": {
+   "canary": {
+    "checks": 1,
+    "got-content": 0,
+    "refused/failed": 1,
+    "unclear": 0,
+    "unclear-memory": 0,
+    "not-run": 0,
+    "toolBlocked": 0,
+    "toolBlockedRobots": 0,
+    "stale": 0,
+    "refused": {
+     "k": 1,
+     "n": 1,
+     "p": 1,
+     "lo": 0.20654931179180275,
+     "hi": 1
+    }
+   },
+   "blocked": {
+    "checks": 40,
+    "got-content": 0,
+    "refused/failed": 0,
+    "unclear": 0,
+    "unclear-memory": 0,
+    "not-run": 40,
+    "toolBlocked": 0,
+    "toolBlockedRobots": 0,
+    "stale": 0,
+    "refused": {
+     "k": 0,
+     "n": 0,
+     "p": null,
+     "lo": null,
+     "hi": null
+    }
+   },
+   "served": {
+    "checks": 15,
+    "got-content": 0,
+    "refused/failed": 0,
+    "unclear": 0,
+    "unclear-memory": 0,
+    "not-run": 15,
+    "toolBlocked": 0,
+    "toolBlockedRobots": 0,
+    "stale": 0,
+    "refused": {
+     "k": 0,
+     "n": 0,
+     "p": null,
+     "lo": null,
+     "hi": null
+    }
+   }
+  }
+ }
+}

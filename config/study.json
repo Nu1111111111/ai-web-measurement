@@ -1,0 +1,15 @@
+{
+  "token": "AIWebMeasure",
+  "version": "1.0",
+  "infoUrl": "https://nu1111111111.github.io/aiwebmeasure/",
+  "list": "config/tranco-GQ3LK-top10000.csv",
+  "tailList": "config/tranco-GQ3LK-tail5000-seed1.csv",
+  "listId": "GQ3LK",
+  "gapMs": 400,
+  "timeoutMs": 20000,
+  "maxBytes": 4194304,
+  "concurrency": 24,
+  "thresholds": { "same": 0.8, "margin": 0.1, "minLine": 25, "maxQuoted": 300 },
+  "sensitivity": [{ "same": 0.7, "margin": 0.1 }, { "same": 0.9, "margin": 0.1 }, { "same": 0.8, "margin": 0.05 }, { "same": 0.8, "margin": 0.2 }],
+  "pilotMaxDomains": 300
+}

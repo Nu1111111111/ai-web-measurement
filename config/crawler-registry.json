@@ -1,0 +1,33 @@
+{
+ "checked": "2026-10-17",
+ "note": "Every token, purpose and robots.txt statement was read on the operator's own page on the date above. Bytespider has no operator page we could find; it is kept and labelled.",
+ "crawlers": [
+  { "token": "GPTBot", "operator": "OpenAI", "role": "training", "fetches": true, "source": "https://developers.openai.com/api/docs/bots", "statement": "Disallowing GPTBot indicates a site's content should not be used in training generative AI foundation models." },
+  { "token": "OAI-SearchBot", "operator": "OpenAI", "role": "search", "fetches": true, "source": "https://developers.openai.com/api/docs/bots", "statement": "Sites that are opted out of OAI-SearchBot will not be shown in ChatGPT search answers." },
+  { "token": "ChatGPT-User", "operator": "OpenAI", "role": "user", "fetches": true, "source": "https://developers.openai.com/api/docs/bots", "statement": "User-initiated; robots.txt rules may not apply." },
+  { "token": "ClaudeBot", "operator": "Anthropic", "role": "training", "fetches": true, "source": "https://support.claude.com/en/articles/8896518", "statement": "Collects web content that could contribute to model training." },
+  { "token": "Claude-SearchBot", "operator": "Anthropic", "role": "search", "fetches": true, "source": "https://support.claude.com/en/articles/8896518", "statement": "Navigates the web to improve search result quality." },
+  { "token": "Claude-User", "operator": "Anthropic", "role": "user", "fetches": true, "source": "https://support.claude.com/en/articles/8896518", "statement": "Fetches pages when a Claude user's question calls for it." },
+  { "token": "PerplexityBot", "operator": "Perplexity", "role": "search", "fetches": true, "source": "https://docs.perplexity.ai/guides/bots", "statement": "Surfaces and links websites in Perplexity search results; not used for training foundation models." },
+  { "token": "Perplexity-User", "operator": "Perplexity", "role": "user", "fetches": true, "source": "https://docs.perplexity.ai/guides/bots", "statement": "User-initiated; generally ignores robots.txt." },
+  { "token": "Google-Extended", "operator": "Google", "role": "training", "fetches": false, "source": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers", "statement": "Controls use for Gemini training and grounding; does not affect inclusion or ranking in Google Search; no own user agent string." },
+  { "token": "Applebot-Extended", "operator": "Apple", "role": "training", "fetches": false, "source": "https://support.apple.com/en-us/119829", "statement": "Opts out of training Apple's generative models; does not crawl; not considered in Search ranking." },
+  { "token": "Applebot", "operator": "Apple", "role": "search", "fetches": true, "source": "https://support.apple.com/en-us/119829", "statement": "Powers Spotlight, Siri and Safari search; data may also help train Apple's models." },
+  { "token": "Meta-ExternalAgent", "operator": "Meta", "role": "training", "fetches": true, "source": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/", "statement": "Crawls for training AI models or improving products; respects robots.txt." },
+  { "token": "Meta-WebIndexer", "operator": "Meta", "role": "search", "fetches": true, "source": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/", "statement": "Improves Meta AI search results; respects robots.txt." },
+  { "token": "Amazonbot", "operator": "Amazon", "role": "training", "fetches": true, "source": "https://developer.amazon.com/amazonbot", "statement": "Improves Amazon products; may be used to train Amazon AI models." },
+  { "token": "Amzn-SearchBot", "operator": "Amazon", "role": "search", "fetches": true, "source": "https://developer.amazon.com/amazonbot", "statement": "Search experiences (e.g. Alexa); not used for generative AI training." },
+  { "token": "CCBot", "operator": "Common Crawl", "role": "training", "fetches": true, "source": "https://commoncrawl.org/ccbot", "statement": "Open web archive, widely used as AI training data; robots.txt is the documented opt-out." },
+  { "token": "Bytespider", "operator": "ByteDance", "role": "training", "fetches": true, "source": null, "statement": "No operator documentation found on 2026-10-17; role per third-party reports." },
+  { "token": "Googlebot", "operator": "Google", "role": "reference", "fetches": true, "source": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers", "statement": "Google Search crawler (reference arm)." },
+  { "token": "Bingbot", "operator": "Microsoft", "role": "reference", "fetches": true, "source": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0", "statement": "Bing Search crawler (reference arm)." }
+ ],
+ "pairs": [
+  { "operator": "OpenAI", "training": "GPTBot", "search": "OAI-SearchBot" },
+  { "operator": "Anthropic", "training": "ClaudeBot", "search": "Claude-SearchBot" },
+  { "operator": "Meta", "training": "Meta-ExternalAgent", "search": "Meta-WebIndexer" },
+  { "operator": "Amazon", "training": "Amazonbot", "search": "Amzn-SearchBot" },
+  { "operator": "Google", "training": "Google-Extended", "search": "Googlebot" },
+  { "operator": "Apple", "training": "Applebot-Extended", "search": "Applebot" }
+ ]
+}

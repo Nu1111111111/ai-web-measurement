@@ -1,0 +1,1 @@
+{ "run": "wave2-tail-gh-azure", "stratum": "tail", "domains": "config/wave2-tail.txt", "shards": 2 }

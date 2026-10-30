@@ -1,0 +1,48 @@
+{
+ "label": "wave1-head",
+ "generated": "2026-10-29T13:39:59.198Z",
+ "agents": {
+  "ChatGPT": {
+   "checks": 40,
+   "got-content": 20,
+   "refused/failed": 14,
+   "unclear": 1,
+   "not-run": 5,
+   "alsoBlocked": {
+    "k": 14,
+    "n": 34,
+    "p": 0.4117647058823529,
+    "lo": 0.2636596826489312,
+    "hi": 0.577784062455578
+   }
+  },
+  "Claude": {
+   "checks": 40,
+   "got-content": 29,
+   "refused/failed": 5,
+   "unclear": 2,
+   "not-run": 4,
+   "alsoBlocked": {
+    "k": 5,
+    "n": 34,
+    "p": 0.14705882352941177,
+    "lo": 0.06449441403975859,
+    "hi": 0.3012805663782785
+   }
+  },
+  "Perplexity": {
+   "checks": 14,
+   "got-content": 10,
+   "refused/failed": 1,
+   "unclear": 3,
+   "not-run": 0,
+   "alsoBlocked": {
+    "k": 1,
+    "n": 11,
+    "p": 0.09090909090909091,
+    "lo": 0.0162321727053256,
+    "hi": 0.377358439108296
+   }
+  }
+ }
+}

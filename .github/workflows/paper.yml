@@ -1,0 +1,38 @@
+# Builds paper/main.tex into a PDF and an arXiv-ready source bundle (with .bbl,
+# because arXiv does not run BibTeX) and pushes both to branch paper-build.
+# Pull locally with: git fetch origin paper-build && git show origin/paper-build:main.pdf > paper/build/main.pdf
+name: paper
+
+on:
+  push:
+    branches: [main]
+    paths: [paper/**, .github/workflows/paper.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: install TeX Live (Ubuntu packages)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-publishers texlive-pictures texlive-science texlive-plain-generic lmodern latexmk
+      - run: cd paper && latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex
+      - name: arXiv bundle
+        run: |
+          mkdir -p bundle/tables
+          cp paper/main.tex paper/numbers.tex paper/fig-arms-*.dat paper/build/main.bbl bundle/
+          for t in $(grep -o '\\tbl{[^}]*}' paper/main.tex | sed 's/\\tbl{\(.*\)}/\1/'); do cp "paper/tables/$t.tex" bundle/tables/; done
+          tar -czf arxiv-source.tar.gz -C bundle .
+      - name: push paper-build
+        run: |
+          cp paper/build/main.pdf main.pdf
+          sudo apt-get install -y -qq poppler-utils && pdftoppm -r 110 -png main.pdf page
+          git config user.name "paper-bot"; git config user.email "paper-bot@users.noreply.github.com"
+          git checkout --orphan paper-build; git rm -rfq --cached .
+          git add -f main.pdf arxiv-source.tar.gz page-*.png && git commit -qm "paper build ${GITHUB_SHA::7}"
+          git push -f origin paper-build
